@@ -18,6 +18,8 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 
 >- output: i and j for maximum d(i,j) <- |a[i] - a[j]| / |i-j|
 
+<p><code>
+
 algo <- nums
 
 	max_i <- 0
@@ -44,6 +46,8 @@ algo <- nums
 
 end
 
+</p></code>
+
 > definition for d(i, j)
 
 >- input: two integers i, j and an array of integers, nums
@@ -51,6 +55,8 @@ end
 >- output: d(i,j) <- |a[i] - a[j]| / |i-j|
 
 >- note: returns 0.0 when i == j to prevent / 0
+
+<p><code>
 
 d <- i, j, nums
 
@@ -64,6 +70,8 @@ d <- i, j, nums
 	return temp_a / temp_b
 
 end
+
+</p></code>
 
 **Section 3: Complexity**
 > complexity
