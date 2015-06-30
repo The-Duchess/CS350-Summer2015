@@ -91,3 +91,9 @@ def d (i, j, nums) {
 > out of any d(i, j) that would divide by 0 by returning 0.0 which will not
 
 > affect the result.
+
+**additional notes:**
+
+> a link to a ruby script on my github that tests my algorithm
+>- [assignment1.rb](https://github.com/The-Duchess/CS350-Summer2015/blob/master/assignment1.rb)
+>- usage is ruby assignment1.rb <length of array>
