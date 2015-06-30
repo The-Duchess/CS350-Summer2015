@@ -18,7 +18,7 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 
 >- output: i and j for maximum d(i,j) <- |a[i] - a[j]| / |i-j|
 
-algo (nums) {
+algo <- nums {
 
 	max_i <- 0
 	max_j <- 0
@@ -54,7 +54,7 @@ algo (nums) {
 
 >- note: returns 0.0 when i == j to prevent / 0
 
-d (i, j, nums) {
+d <- i, j, nums {
 
 	if i == j {
 		return 0.0
