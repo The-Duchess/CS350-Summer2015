@@ -8,7 +8,7 @@
 
 **Section 1: Formal Problem Description**
 
-max d(i, j) for all values i, j in 1 to n where n is the length of
+> max d(i, j) for all values i, j in 1 to n where n is the length of
 the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 
 **Section 2: Algorithm**
