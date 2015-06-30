@@ -68,7 +68,7 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 **Section 3: Complexity**
 > complexity
 >- assuming the basic operation is the number of calls to d(i, j) that result in real computation, i.e. not the fail cases, we have complexity t[n] = n<sup>2</sup> - 3n + 1.
->- considering the fact that d(i, j) will fail before it does any notable work given i = j we the number of operations is more like (n-1)(n-1) - n. however due to caring about t[n] as n gets very large we can drop the +1 and -3n. this gives approximately t[n] = n<sup>2</sup>.
+>- considering the fact that d(i, j) will fail before it does any notable work given i = j the number of operations is more like (n-1)(n-1) - n. however due to caring about t[n] as n gets very large we can drop the +1 and -3n. this gives approximately t[n] = n<sup>2</sup>.
 >- my algorithm is in the space of n<sup>2</sup> or O(n<sup>2</sup>)
 >- my algorithm is measured against calls to d(i, j) which is called n<sup>2</sup> times due to the double nested loop that runs from 1 to n.
 
