@@ -1,4 +1,4 @@
-# ** Assignment 1 **
+# **Assignment 1**
 > Author: Isaac Archer
 
 > Name: Assignment 1, Finding Nearby Differences
@@ -6,11 +6,11 @@
 > Due Date: Wed, July 1st, 2015 00:00
 
 
-** Section 1: Formal Problem Description **
+**Section 1: Formal Problem Description**
 
 
 
-** Section 2: Algorithm **
+**Section 2: Algorithm**
 > algorithm
 
 >- input: an array of integers of size n
@@ -64,12 +64,12 @@ def d (i, j, nums) {
 
 }
 
-** Section 3: Complexity **
+**Section 3: Complexity**
 > complexity
 >- my algorithm is in the space of n<sup>2</sup> or O(n<sup>2</sup>)
 >- my algorithm is measured against calls to d(i, j) which is called n<sup>2</sup> times due to the double nested loop that runs from 1 to n.
 
-** Section 4: Correctness **
+**Section 4: Correctness**
 
 the double nested loop of for( i [1:n]) { for( j [1:n]) { } } meets the
 
