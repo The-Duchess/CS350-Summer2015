@@ -44,6 +44,8 @@ def algo (nums) {
 
 }
 
+
+
 > definition for d(i, j)
 
 >- input: two integers i, j and an array of integers, nums
