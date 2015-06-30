@@ -36,13 +36,13 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 					max_i <- i
 					max_j <- j
 					max_d <- cur_d
-				end
-			end
-		end
+				
+			
+		
 
 		return ++max_i, ++max_j // increment to provide base 1 array indeces
 
-	end
+	
 
 > definition for d(i, j)
 
@@ -56,14 +56,14 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 
 		if i == j
 			return 0.0
-		end
+		
 
 		temp_a <- |nums[i] - nums[j]|
 		temp_b <- |i - j|
 
 		return temp_a / temp_b
 
-	end
+	
 
 **Section 3: Complexity**
 > complexity
