@@ -14,7 +14,7 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 **Section 2: Algorithm**
 > algorithm
 
->- input: an array of integers of size n
+>- input: an array of integers of size n, nums
 
 >- output: i and j for maximum d(i,j) <- |a[i] - a[j]| / |i-j|
 
