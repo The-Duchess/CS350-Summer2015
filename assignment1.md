@@ -72,25 +72,7 @@ def d (i, j, nums) {
 
 **Section 4: Correctness**
 
-> the double nested loop of for( i [1:n]) { for( j [1:n]) { } } meets the
-
-> requirement to check all possible combinations of a[i][j]. this allows me
-
-> to check all d(i, j) values and compare them to previous d(i, j values) using
-
-> the transitivity of of greater than and find the highest d(i, j) for the array
-
-> of integers a. i store the current i and j values for the current highest
-
-> d(i, j) and then return this at the end. they are only updated when d(i, j)
-
-> exceeds the previous d(i, j). this shows that the algorithm gives the correct
-
-> i and j values for the max d(i, j) for the integer array a. it also will fail
-
-> out of any d(i, j) that would divide by 0 by returning 0.0 which will not
-
-> affect the result.
+> the double nested loop of for( i [1:n]) { for( j [1:n]) { } } meets the requirement to check all possible combinations of a[i][j]. this allows me to check all d(i, j) values and compare them to previous d(i, j values) using the transitivity of of greater than and find the highest d(i, j) for the array of integers a. i store the current i and j values for the current highest d(i, j) and then return this at the end. they are only updated when d(i, j) exceeds the previous d(i, j). this shows that the algorithm gives the correct i and j values for the max d(i, j) for the integer array a. it also will fail out of any d(i, j) that would divide by 0 by returning 0.0 which will not affect the result.
 
 **additional notes:**
 
