@@ -8,8 +8,6 @@
 
 **Section 1: Formal Problem Description**
 
-> max d(i, j) for all values i, j in 1 to n where n is the length of
-the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 
 **Section 2: Algorithm**
 > algorithm
@@ -37,12 +35,7 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 					max_j <- j
 					max_d <- cur_d
 				
-			
-		
-
 		return ++max_i, ++max_j // increment to provide base 1 array indeces
-
-	
 
 > definition for d(i, j)
 
@@ -62,8 +55,6 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 		temp_b <- |i - j|
 
 		return temp_a / temp_b
-
-	
 
 **Section 3: Complexity**
 > complexity
