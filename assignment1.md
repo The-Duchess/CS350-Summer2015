@@ -9,6 +9,7 @@
 **Section 1: Formal Problem Description**
 
 
+
 **Section 2: Algorithm**
 > algorithm
 
@@ -20,13 +21,11 @@
 
 		max_i <- 0
 		max_j <- 0
-		max_d <- 0.0
-		cur_d <- 0.0
+		max_d <- 0
+		cur_d <- 0
 
-		len <- nums.length - 1
-
-		for i [0:len]
-			for i [0:len]
+		for i <- 1..length(nums)
+			for j <- i..length(nums)
 
 				cur_d <- d (i, j, nums)
 
@@ -35,7 +34,7 @@
 					max_j <- j
 					max_d <- cur_d
 				
-		return ++max_i, ++max_j // increment to provide base 1 array indeces
+		return max_i, max_j
 
 > definition for d(i, j)
 
@@ -48,7 +47,7 @@
 	d <- i, j, nums
 
 		if i == j
-			return 0.0
+			return 0
 		
 
 		temp_a <- |nums[i] - nums[j]|
