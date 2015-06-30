@@ -18,31 +18,31 @@ the array of integers, a, such that d(i, j) = d(i,j) <- |a[i] - a[j]| / |i-j|
 
 >- output: i and j for maximum d(i,j) <- |a[i] - a[j]| / |i-j|
 
-algo <- nums
+	algo <- nums
 
-	max_i <- 0
-	max_j <- 0
-	max_d <- 0.0
-	cur_d <- 0.0
+		max_i <- 0
+		max_j <- 0
+		max_d <- 0.0
+		cur_d <- 0.0
 
-	len <- nums.length - 1
+		len <- nums.length - 1
 
-	for i [0:len]
 		for i [0:len]
+			for i [0:len]
 
-			cur_d <- d (i, j, nums)
+				cur_d <- d (i, j, nums)
 
-			if cur_d > max_d
-				max_i <- i
-				max_j <- j
-				max_d <- cur_d
+				if cur_d > max_d
+					max_i <- i
+					max_j <- j
+					max_d <- cur_d
+				end
 			end
 		end
+
+		return ++max_i, ++max_j // increment to provide base 1 array indeces
+
 	end
-
-	return ++max_i, ++max_j // increment to provide base 1 array indeces
-
-end
 
 > definition for d(i, j)
 
@@ -52,18 +52,18 @@ end
 
 >- note: returns 0.0 when i == j to prevent / 0
 
-d <- i, j, nums
+	d <- i, j, nums
 
-	if i == j
-		return 0.0
+		if i == j
+			return 0.0
+		end
+
+		temp_a <- |nums[i] - nums[j]|
+		temp_b <- |i - j|
+
+		return temp_a / temp_b
+
 	end
-
-	temp_a <- |nums[i] - nums[j]|
-	temp_b <- |i - j|
-
-	return temp_a / temp_b
-
-end
 
 **Section 3: Complexity**
 > complexity
