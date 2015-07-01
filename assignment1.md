@@ -8,7 +8,7 @@
 
 **Section 1: Formal Problem Description**
 
-
+> ∀ n ∈ ℤ ∃ i, j, a[1..n], d(i, j) = |a[i] - a[j]|/|i - j| | 1 ≤ i ≤ n, 1 ≤ j ≤ n → max(d(i,j)) over a[1..n]
 
 **Section 2: Algorithm**
 > algorithm
@@ -57,8 +57,9 @@
 
 **Section 3: Complexity**
 > complexity
->- assuming the basic operation is the number of calls to d(i, j) that result in real computation, i.e. not the fail cases, we have complexity t[n] = n<sup>2</sup> - 3n + 1.
->- considering the fact that d(i, j) will fail before it does any notable work given i = j the number of operations is more like (n-1)(n-1) - n. however due to caring about t[n] as n gets very large we can drop the +1 and -3n. this gives approximately t[n] = n<sup>2</sup>.
+>- assuming the basic operation is the number of calls to d(i, j) that result in real computation, i.e. not the fail cases, we have complexity t[n] = n<sup>2</sup> - 2n.
+>- considering the fact that d(i, j) will fail before it does any notable work given i = j the number of operations is more like (n)(n-1) - n. however due to caring about t[n] as n gets very large we can drop the -2n. this gives approximately t[n] = n<sup>2</sup>.
+>- we can cut the algorithm down so it's (n-1)(n) with a second for loop that is smaller each time to prevent re-running d(i, j). this will not change the general complexity.
 >- my algorithm is in the space of n<sup>2</sup> or O(n<sup>2</sup>)
 >- my algorithm is measured against calls to d(i, j) which is called n<sup>2</sup> times due to the double nested loop that runs from 1 to n.
 
