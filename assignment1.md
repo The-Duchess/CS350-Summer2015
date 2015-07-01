@@ -8,6 +8,10 @@
 
 **Section 1: Formal Problem Description**
 
+> problem name: find maximum nearby differences
+
+> instance: array of integers
+
 > ∃ (i, j) ∈ ℤ {1..n} | ∀ (k, l) ∈ ℤ {1..n} | d(i, j) > d(k, l)
 
 **Section 2: Algorithm**
@@ -19,13 +23,13 @@
 
 	algo <- nums
 
-		max_i <- 0
-		max_j <- 0
+		max_i <- 1
+		max_j <- 2
 		max_d <- 0
 		cur_d <- 0
 
-		for i <- 1..length(nums)
-			for j <- i..length(nums)
+		for i <- 1..(length(nums) - 1)
+			for j <- (i+1)..length(nums)
 
 				cur_d <- d (i, j, nums)
 
@@ -42,12 +46,7 @@
 
 >- output: d(i,j) <- |a[i] - a[j]| / |i-j|
 
->- note: returns 0.0 when i == j to prevent / 0
-
 	d <- i, j, nums
-
-		if i == j
-			return 0
 		
 		temp_a <- |nums[i] - nums[j]|
 		temp_b <- |i - j|
@@ -56,12 +55,11 @@
 
 **Section 3: Complexity**
 > complexity
->- assuming the basic operation is the number of calls to d(i, j) that result in real computation, i.e. not the fail cases, we have complexity t[n] = n<sup>2</sup> - 2n.
->- considering the fact that d(i, j) will fail before it does any notable work given i = j the number of operations is more like (n)(n-1) - n. however due to caring about t[n] as n gets very large we can drop the -2n. this gives approximately t[n] = n<sup>2</sup>.
+>- assuming the basic operation is the number of calls to d(i, j) we have complexity t[n] = n<sup>2</sup> - 2n.
 >- we can cut the algorithm down so it's (n-1)(n) with a second for loop that is smaller each time to prevent re-running d(i, j). this will not change the general complexity.
 >- my algorithm is in the space of n<sup>2</sup> or O(n<sup>2</sup>)
 >- my algorithm is measured against calls to d(i, j) which is called n<sup>2</sup> times due to the double nested loop that runs from 1 to n.
 
 **Section 4: Correctness**
 
-> the double nested loop of for( i [1:n]) { for( j [1:n]) { } } meets the requirement to check all possible combinations of a[i][j]. this allows me to check all d(i, j) values and compare them to previous d(i, j values) using the transitivity of of greater than and find the highest d(i, j) for the array of integers a. i store the current i and j values for the current highest d(i, j) and then return this at the end. they are only updated when d(i, j) exceeds the previous d(i, j). this shows that the algorithm gives the correct i and j values for the max d(i, j) for the integer array a. it also will fail out of any d(i, j) that would divide by 0 by returning 0.0 which will not affect the result.
+> the double nested loop of for( i [1:n]) { for( j [1:n]) { } } meets the requirement to check all possible combinations of a[i][j]. this allows me to check all d(i, j) values and compare them to previous d(i, j values) using the transitivity of of greater than and find the highest d(i, j) for the array of integers a. i store the current i and j values for the current highest d(i, j) and then return this at the end. they are only updated when d(i, j) exceeds the previous d(i, j). this shows that the algorithm gives the correct i and j values for the max d(i, j) for the integer array a.
