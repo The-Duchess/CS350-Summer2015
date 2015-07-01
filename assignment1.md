@@ -56,7 +56,7 @@
 **Section 3: Complexity**
 > complexity
 >- assuming the basic operation is the number of calls to d(i, j) we have complexity O(n-1)O(n-1) or t[n] = n<sup>2</sup> - 2n + 1.
->- the overall complexity is O(n)x a Gaussian sum but the complexity class is not better.
+>- the overall complexity is a Gaussian sum but the complexity class is not better.
 >- we can cut the algorithm down so it's with a second for loop that is smaller each time to prevent re-running d(i, j). this will not change the complexity class.
 >- my algorithm is in the space of n<sup>2</sup> or O(n<sup>2</sup>)
 >- my algorithm is measured against calls to d(i, j) which is called n<sup>2</sup> times due to the double nested loop that runs from 1 to n.
