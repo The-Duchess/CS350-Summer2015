@@ -12,7 +12,7 @@
 
 > instance: array of integers
 
-> ∃ (i, j) ∈ ℤ {1..n} | ∀ (k, l) ∈ ℤ {1..n} | d(i, j) > d(k, l)
+> problem solution: ∃ (i, j) ∈ ℤ {1..n} | ∀ (k, l) ∈ ℤ {1..n} | d(i, j) > d(k, l)
 
 **Section 2: Algorithm**
 > algorithm
