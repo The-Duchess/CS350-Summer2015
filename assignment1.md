@@ -54,8 +54,10 @@
 		return temp_a / temp_b
 
 **Section 3: Complexity**
->- assuming the basic operation is the number of calls to d(i, j) we have complexity t[n] = n * ∑ (n - i) for (i..n)
->- that simplifies to O(n<sup>2</sup>)
+>- assuming the basic operation is the number of calls to d(i, j) we have complexity t[n] = ∑ i for (i..n)
+>- this simplifies: t[n] = n(n + 1) / 2
+>- this simplifies: t[n] = (n<sup>2</sup> + 2) / 2
+>- this simplifies: O(n<sup>2</sup>)
 >- the overall complexity is a gaussian sum but the complexity class is not better than O(n<sup>2</sup>).
 >- my algorithm is in the space of n<sup>2</sup> or O(n<sup>2</sup>)
 
