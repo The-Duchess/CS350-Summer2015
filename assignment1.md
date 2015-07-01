@@ -8,7 +8,7 @@
 
 **Section 1: Formal Problem Description**
 
-> ∃ max(d(i,j)) over a[1..n] ∀ n ∈ ℤ ∃ i, j, a[1..n], d(i, j) = |a[i] - a[j]|/|i - j| | 1 ≤ i ≤ n, 1 ≤ j ≤ n
+> ∃ (i, j) ∈ ℤ {1..n} | ∀ (k, l) ∈ ℤ {1..n} ∃ d(i, j) > d(k, l)
 
 **Section 2: Algorithm**
 > algorithm
