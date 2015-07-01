@@ -49,7 +49,6 @@
 		if i == j
 			return 0
 		
-
 		temp_a <- |nums[i] - nums[j]|
 		temp_b <- |i - j|
 
