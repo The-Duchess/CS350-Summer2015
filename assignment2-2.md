@@ -25,7 +25,8 @@
                                     continue
                               else
                                     // input: array dest, integer to append to dest
-                                    append ← arr_c, arr_a[i] // base operation
+                                    // base operation
+                                    append ← arr_c, arr_a[i]
 
             ↑ arr_c
 
@@ -88,7 +89,8 @@
                                           next
                                     else
                                           // input: array dest, integer to append to dest
-                                          append ← arr_c, temp_intersect[k] // base operation
+                                          // base operation
+                                          append ← arr_c, temp_intersect[k]
 
 
             ↑ arr_c
@@ -110,7 +112,8 @@
                                     continue
                               else
                                     // input: array dest, integer to append to dest
-                                    append ← arr_c, arr_a[i] // base operation
+                                    // base operation
+                                    append ← arr_c, arr_a[i]
 
             ↑ arr_c
 
