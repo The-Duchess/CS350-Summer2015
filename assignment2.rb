@@ -25,21 +25,21 @@ def test_arr_int(len_a, len_b)
       arr_b = []
 
       0.upto(len_a - 1) { |i| arr_a.push(rand(len_a) + 1) }
-      0.upto(len_b - 1) { |i| arr_a.push(rand(len_b) + 1) }
+      0.upto(len_b - 1) { |i| arr_b.push(rand(len_b) + 1) }
 
       print "ARRAY A: "
       STDOUT.flush
-      puts arr_a
+      puts arr_a.to_s
 
       print "ARRAY B: "
       STDOUT.flush
-      puts arr_b
+      puts arr_b.to_s
 
       arr_c = array_intersect(arr_a, arr_b)
 
       print "ARRAY B: "
       STDOUT.flush
-      puts arr_c
+      puts arr_c.to_s
 
       return 0
 end
