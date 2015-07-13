@@ -24,7 +24,7 @@
                               if include ← arr_c, arr_a[i] // O(o)
                                     continue
                               else
-                                    // input: array destination, integer to append to destination
+                                    // input: array dest, integer to append to dest
                                     append ← arr_c, arr_a[i] // base operation
 
             ↑ arr_c
@@ -87,7 +87,7 @@
                                     if include ← arr_c, temp_intersect[k]
                                           next
                                     else
-                                          // input: array destination, integer to append to destination
+                                          // input: array dest, integer to append to dest
                                           append ← arr_c, temp_intersect[k] // base operation
 
 
@@ -109,7 +109,7 @@
                               if include ← arr_c, arr_a[i] // O(o)
                                     continue
                               else
-                                    // input: array destination, integer to append to destination
+                                    // input: array dest, integer to append to dest
                                     append ← arr_c, arr_a[i] // base operation
 
             ↑ arr_c
