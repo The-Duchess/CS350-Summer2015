@@ -32,20 +32,17 @@ def narray_intersect(arr_all)
       0.upto(len_all) do |i|
             0.upto(len_all) do |j|
                   if i == j
-                        p "====================="
-                        p i
-                        p arr_all[i].to_s
-                        p j
-                        p arr_all[j].to_s
-                        p "====================="
                         next
                   else
                         temp_intersect = array_intersect(arr_all[i], arr_all[j])
+                        p temp_intersect.to_s
+                        p arr_c.to_s
                         temp_intersect.each do |k|
                               if arr_c.include? k
                                     next
                               else
                                     arr_c.push(k)
+                                    p arr_c.to_s
                               end
                         end
                   end
