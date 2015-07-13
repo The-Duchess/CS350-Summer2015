@@ -37,7 +37,7 @@ def test_arr_int(len_a, len_b)
 
       arr_c = array_intersect(arr_a, arr_b)
 
-      print "ARRAY B: "
+      print "INTERSECT ARRAY: "
       STDOUT.flush
       puts arr_c.to_s
 
