@@ -34,7 +34,7 @@ def narray_intersect(arr_all)
                   if i == j
                         next
                   else
-                        temp_intersect = array_intersect(len_all[i], len_all[j])
+                        temp_intersect = array_intersect(arr_all[i], arr_all[j])
                         temp_intersect.each do |k|
                               if !arr_c.include? k then arr_c.push(k) end
                         end
