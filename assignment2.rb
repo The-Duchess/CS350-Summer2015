@@ -3,6 +3,8 @@
 # Description:
 # test for an algorithm to find the array intersect of two arrays of length n and m
 
+# input: two arrays of integers
+# output: array of integers of the intersect of the arrays
 def array_intersect(arr_a, arr_b)
 
       arr_c = []
@@ -112,9 +114,12 @@ def main()
       len_a = ARGV[0].to_i
       len_b = ARGV[1].to_i
 
-      #test_arr_int(len_a, len_b)
+      num_arr = ARGV[2].to_i
+      arr_len = ARGV[3].to_i
 
-      test_arr_all_int(len_a, len_b)
+      test_arr_int(len_a, len_b)
+
+      test_arr_all_int(num_arr, arr_len)
 end
 
 main

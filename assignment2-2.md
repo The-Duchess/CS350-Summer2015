@@ -67,6 +67,69 @@
 
 **Algorithm 2 for Generalization**
 
+> input: an array of arrays of integers
+
+> outout: an array of integers shared by the arrays in the input such that no integer appears more than once in the output array.
+
+      def narray_intersect ← arr_all
+
+            len_all ← |arr_all|
+            arr_c ← []
+
+            for i ← 1..len_all
+                  for j ← 1..len_all
+                        if i = j
+                              next
+                        else
+                              temp_intersect ← array_intersection ← arr_all[i], arr_all[j]
+                              len_temp ← |temp_intersect|
+                              for k ← 1..len_temp
+                                    if include ← arr_c, temp_intersect[k]
+                                          next
+                                    else
+                                          // input: array destination, integer to append to destination
+                                          append ← arr_c, temp_intersect[k] // base operation
+
+
+            ↑ arr_c
+
+> input: 1-Based arrays arr_a and arr_b of positive integers. denote the size of arr_a by |arr_a| and similarly for b
+
+> output: 1-Based array arr_c of positive integers, such that arr_c contains exactly one copy of each integer that appears somewhere in both arr_a arr_b. Thus, |arr_c| ≤ min(|arr_a|, |arr_b|).
+
+      def array_intersection ← arr_a, arr_b
+
+            arr_c ← []
+            len_a ← |arr_a|
+            len_b ← |arr_b|
+
+            for i ← 1..len_a // O(n)
+                  for j ← 1..len_b // O(m)
+                       if arr_a[i] = arr_b[j]
+                              if include ← arr_c, arr_a[i] // O(o)
+                                    continue
+                              else
+                                    // input: array destination, integer to append to destination
+                                    append ← arr_c, arr_a[i] // base operation
+
+            ↑ arr_c
+
+
+> input: 1-Based array arr_temp and a integer num
+
+> output: true if arr_temp contains num and false if arr_temp does not contain num
+
+
+      def include ← arr_temp, num
+
+            if |arr_temp| < 1 then ↑ false
+
+            for k ← 1..|arr_temp|
+                  if arr_temp[k] = num then ↑ true
+
+
+            ↑ false
+
 **Implementation**
 
 >Implementation in Ruby with Testing
