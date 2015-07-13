@@ -136,10 +136,6 @@
 
 ```ruby
 
-      #! /usr/bin/env ruby
-      # Author: Isaac Archer
-      # Description:
-      # test for an algorithm to find the array intersect of two arrays of length n and m
 
       #! /usr/bin/env ruby
       # Author: Isaac Archer
