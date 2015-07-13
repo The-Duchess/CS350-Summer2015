@@ -17,7 +17,6 @@ def array_intersect(arr_a, arr_b)
       end
 
       return arr_c
-
 end
 
 def test_arr_int(len_a, len_b)
@@ -28,12 +27,21 @@ def test_arr_int(len_a, len_b)
       0.upto(len_a - 1) { |i| arr_a.push(rand(len_a) + 1) }
       0.upto(len_b - 1) { |i| arr_a.push(rand(len_b) + 1) }
 
+      print "ARRAY A: "
+      STDOUT.flush
+      puts arr_a
+
+      print "ARRAY B: "
+      STDOUT.flush
+      puts arr_b
+
       arr_c = array_intersect(arr_a, arr_b)
 
+      print "ARRAY B: "
+      STDOUT.flush
       puts arr_c
 
       return 0
-
 end
 
 def main()
@@ -47,7 +55,6 @@ def main()
       len_b = ARGV[1].to_i
 
       test_arr_int(len_a, len_b)
-
 end
 
 main
