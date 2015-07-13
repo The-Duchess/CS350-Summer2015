@@ -22,6 +22,54 @@ def array_intersect(arr_a, arr_b)
       return arr_c
 end
 
+# input: array of arrays of integers
+# output array of integers that is the intersect of the arrays in the input
+def narray_intersect(arr_all)
+
+      len_all = arr_all.length - 1
+      arr_c = []
+
+      0.upto(len_all) do |i|
+            0.upto(len_all) do |j|
+                  if i == j
+                        next
+                  else
+                        temp_intersect = array_intersect(len_all[i], len_all[j])
+                        temp_intersect.each do |k|
+                              if !arr_c.include? k then arr_c.push(k) end
+                        end
+                  end
+            end
+      end
+
+end
+
+def test_arr_all_int(num_arr, arr_len)
+      arr_all = []
+
+      0.upto(num_arr) do |l|
+            temp_arr = []
+            0.upto(arr_len - 1) { |m| temp_arr.push(rand(arr_len) + 1) }
+            arr_all.push(temp_arr)
+            temp_arr = nil
+      end
+
+      i = 1
+
+      arr_all.each do |a|
+            print "ARRAY #{i}: "
+            STDOUT.flush
+            puts a.to_s
+            i = i + 1
+      end
+
+      arr_c = narray_intersect(arr_all)
+
+      print "INTERSECT ARRAY: "
+      STDOUT.flush
+      puts arr_c.to_s
+end
+
 def test_arr_int(len_a, len_b)
 
       arr_a = []
@@ -57,7 +105,9 @@ def main()
       len_a = ARGV[0].to_i
       len_b = ARGV[1].to_i
 
-      test_arr_int(len_a, len_b)
+      #test_arr_int(len_a, len_b)
+
+      test_arr_all_int(len_a, len_b)
 end
 
 main
