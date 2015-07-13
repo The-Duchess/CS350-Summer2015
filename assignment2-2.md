@@ -71,7 +71,7 @@
 
 >Implementation in Ruby with Testing
 
-
+      ```ruby
       #! /usr/bin/env ruby
       # Author: Isaac Archer
       # Description:
@@ -135,7 +135,7 @@
       end
 
       main
-
+      ```
 
 > The algorithm slows down considerably as the input size increases above small values like 100 or 1000.
 
