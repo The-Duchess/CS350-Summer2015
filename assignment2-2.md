@@ -25,7 +25,7 @@
                                     continue
                               else
                                     // input: array destination, integer to append to destination
-                                    append ← arr_c, arr_a[i] // O(1)
+                                    append ← arr_c, arr_a[i] // base operation
 
             ↑ arr_c
 
