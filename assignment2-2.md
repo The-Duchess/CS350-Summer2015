@@ -57,11 +57,9 @@
 
 **Worst Case**
 
-> O(n) x O(m) x O(o)
-
 > n = |arr_a|, m = |arr_b|, o = the size of a growing array that doesn't exceed the length of n or m, whichever is larger.
 
-> This simplifies to O(mn<sup>2</sup>) or O(nm<sup>2</sup>), whichever of n or m is larger.
+> This simplifies to O(mn<sup>2</sup>) or O(nm<sup>2</sup>), for whichever of n or m is larger.
 
 > O(n) because the outer loop goes n times, and O(m) because the inner loop goes m times and O(n) or O(m) because that loop runs through an array no larger than the greater of n or m.
 
