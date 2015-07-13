@@ -32,6 +32,12 @@ def narray_intersect(arr_all)
       0.upto(len_all) do |i|
             0.upto(len_all) do |j|
                   if i == j
+                        p "====================="
+                        p i
+                        p arr_all.to_s
+                        p j
+                        p arr_all.to_s
+                        p "====================="
                         next
                   else
                         temp_intersect = array_intersect(arr_all[i], arr_all[j])
@@ -49,6 +55,7 @@ def narray_intersect(arr_all)
 end
 
 def test_arr_all_int(num_arr, arr_len)
+
       arr_all = []
 
       0.upto(num_arr - 1) do |l|
