@@ -35,19 +35,18 @@ def narray_intersect(arr_all)
                         next
                   else
                         temp_intersect = array_intersect(arr_all[i], arr_all[j])
-                        p temp_intersect.to_s
-                        p arr_c.to_s
                         temp_intersect.each do |k|
                               if arr_c.include? k
                                     next
                               else
                                     arr_c.push(k)
-                                    p arr_c.to_s
                               end
                         end
                   end
             end
       end
+
+      return arr_c
 
 end
 
