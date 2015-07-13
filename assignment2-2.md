@@ -4,6 +4,8 @@
 
 > Due Date: July 14th 13:00
 
+> Problem Description:
+
 **Algorithm: Array Intersection**
 
 > input: 1-Based arrays arr_a and arr_b of positive integers. denote the size of arr_a by |arr_a| and similarly for b
@@ -13,35 +15,17 @@
       def array_intersection ← arr_a, arr_b
 
             arr_c ← []
-            long_arr ← []
-            short_arr ← []
-            len_l ← 0
-            len_s ← 0
+            len_a ← |arr_a|
+            len_b ← |arr_b|
 
-            if |arr_a| > |arr_b|
-                  len_l ← |arr_a|
-                  len_s ← |arr_b|
-                  long_arr ← arr_a
-                  short_arr ← arr_b
-            else if |arr_b| > |arr_a|
-                  len_l ← |arr_b|
-                  len_s ← |arr_a|
-                  long_arr ← arr_b
-                  short_arr ← arr_a
-            else
-                  len_l ← |arr_b|
-                  len_s ← |arr_a|
-                  long_arr ← arr_b
-                  short_arr ← arr_a
-
-            for i ← 1..len_s // O(n)
-                  for j ← 1..len_l // O(m)
-                       if short_arr[i] = long_arr[j]
-                              if include ← arr_c, short_arr[i] // O(o)
+            for i ← 1..len_a // O(n)
+                  for j ← 1..len_b // O(m)
+                       if arr_a[i] = arr_b[j]
+                              if include ← arr_c, arr_a[i] // O(o)
                                     continue
                               else
                                     // input: array destination, integer to append to destination
-                                    append ← arr_c, short_arr[i] // O(1)
+                                    append ← arr_c, arr_a[i] // O(1)
 
             ↑ arr_c
 
@@ -63,8 +47,96 @@
 
 **Correctness**
 
+>- Returning the Correct Value
+
+>> The algorithm checks all the elements of arr_b for arr_a and if the elements are the same and not already in the array that holds onto elements shared in arr_a and arr_b then that value is added to the array that holds onto elements shared in arr_a and arr_b. These requirements are all met and arr_c is not appended additional copies of times when arr_a[i] == arr_b[j] because of the include function.
+
+>- Halting
+
+>> the loops are the same size as arr_a and arr_b or smaller for arr_c therefore the loops will end resulting in a return statement which guarantees that as long as arr_a and arr_b are finite the algorithm will halt.
+
 **Worst Case**
 
-**Generalization**
+> O(n) x O(m) x O(o)
 
-**Algorithm 2**
+> n = |arr_a|, m = |arr_b|, o = the size of a growing array that doesn't exceed the length of n or m, whichever is larger.
+
+> This simplifies to O(mn<sup>2</sup>) or O(nm<sup>2</sup>), whichever of n or m is larger.
+
+> O(n) because the outer loop goes n times, and O(m) because the inner loop goes m times and O(n) or O(m) because that loop runs through an array no larger than the greater of n or m.
+
+**Generalization to allow for any number of arrays**
+
+**Algorithm 2 for Generalization**
+
+**Implementation**
+
+>Implementation in Ruby with Testing
+
+
+      #! /usr/bin/env ruby
+      # Author: Isaac Archer
+      # Description:
+      # test for an algorithm to find the array intersect of two arrays of length n and m
+
+      def array_intersect(arr_a, arr_b)
+
+            arr_c = []
+
+            0.upto(arr_a.length - 1) do |i|
+                  0.upto(arr_b.length - 1) do |j|
+                        if arr_a[i] == arr_b[j]
+                              if arr_c.include? arr_a[i]
+                                    next
+                              else
+                                    arr_c.push(arr_a[i])
+                              end
+                        end
+                  end
+            end
+
+            return arr_c
+      end
+
+      def test_arr_int(len_a, len_b)
+
+            arr_a = []
+            arr_b = []
+
+            0.upto(len_a - 1) { |i| arr_a.push(rand(len_a) + 1) }
+            0.upto(len_b - 1) { |i| arr_b.push(rand(len_b) + 1) }
+
+            print "ARRAY A: "
+            STDOUT.flush
+            puts arr_a.to_s
+
+            print "ARRAY B: "
+            STDOUT.flush
+            puts arr_b.to_s
+
+            arr_c = array_intersect(arr_a, arr_b)
+
+            print "INTERSECT ARRAY: "
+            STDOUT.flush
+            puts arr_c.to_s
+
+            return 0
+      end
+
+      def main()
+
+            if ARGV.length != 2
+                  puts "invalid arguments"
+                  return 0
+            end
+
+            len_a = ARGV[0].to_i
+            len_b = ARGV[1].to_i
+
+            test_arr_int(len_a, len_b)
+      end
+
+      main
+
+
+> The algorithm slows down considerably as the input size increases above small values like 100 or 1000.

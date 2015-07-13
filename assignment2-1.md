@@ -4,6 +4,8 @@
 
 > Due Date: July 14th 13:00
 
+> Problem Description: 
+
 **Algorithm: First Long 1-String**
 
 > input: A one based array arr of n elements, with the elements drawn from the set {0, 1}. An integer lower bound lb.
