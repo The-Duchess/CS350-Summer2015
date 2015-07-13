@@ -51,7 +51,7 @@ end
 def test_arr_all_int(num_arr, arr_len)
       arr_all = []
 
-      0.upto(num_arr) do |l|
+      0.upto(num_arr - 1) do |l|
             temp_arr = []
             0.upto(arr_len - 1) { |m| temp_arr.push(rand(arr_len) + 1) }
             arr_all.push(temp_arr)
