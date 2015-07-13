@@ -133,9 +133,15 @@
 
             ↑ false
 
+**Correctness Algorithm 2**
+
+>- Returning the Correct Value
+
+>- Halting
+
 **Implementation**
 
->Implementation in Ruby with Testing
+>Implementation in Ruby (for both algorithms) with Testing
 
 ```ruby
 
