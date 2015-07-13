@@ -257,7 +257,7 @@
 
       def main()
 
-            if ARGV.length != 2
+            if ARGV.length != 4
                   puts "invalid arguments"
                   return 0
             end
