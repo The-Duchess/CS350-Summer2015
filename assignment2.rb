@@ -34,9 +34,9 @@ def narray_intersect(arr_all)
                   if i == j
                         p "====================="
                         p i
-                        p arr_all.to_s
+                        p arr_all[i].to_s
                         p j
-                        p arr_all.to_s
+                        p arr_all[j].to_s
                         p "====================="
                         next
                   else
