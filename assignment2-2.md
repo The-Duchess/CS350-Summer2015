@@ -138,3 +138,11 @@
 
 
 > The algorithm slows down considerably as the input size increases above small values like 100 or 1000.
+
+>- n and m size 100 completed in 0.044s
+
+>- n and m size 1000 completed in 0.204s
+
+>- n and m size 10000 completed in 17.774s
+
+>- n and m size 100000 completed in a really long time (significantly over an hour)
