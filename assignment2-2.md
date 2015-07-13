@@ -140,10 +140,12 @@
       #! /usr/bin/env ruby
       # Author: Isaac Archer
       # Description:
-      # test for an algorithm to find the array intersect of two arrays of length n and m
+      # test for an algorithm to find the array
+      # intersect of two arrays of length n and m
 
       # input: two arrays of integers
-      # output: array of integers of the intersect of the arrays
+      # output: array of integers of the
+      # intersect of the arrays
       def array_intersect(arr_a, arr_b)
 
             arr_c = []
@@ -164,7 +166,8 @@
       end
 
       # input: array of arrays of integers
-      # output array of integers that is the intersect of the arrays in the input
+      # output array of integers that is the
+      # intersect of the arrays in the input
       def narray_intersect(arr_all)
 
             len_all = arr_all.length - 1
