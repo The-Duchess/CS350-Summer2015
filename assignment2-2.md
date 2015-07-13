@@ -5,6 +5,7 @@
 > Due Date: July 14th 13:00 2015
 
 > Problem Description:
+> ∃ two sets a, b ∈ ℤ {1..n} | ∃ a set c ∈ ℤ {1..n} | |c| ≤ |a|, |b| | c = a ∩ b
 
 **Algorithm: Array Intersection**
 
@@ -65,6 +66,8 @@
 > O(n) because the outer loop goes n times, and O(m) because the inner loop goes m times and O(n) or O(m) because that loop runs through an array no larger than the smaller of n or m.
 
 **Generalization to allow for any number of arrays**
+
+> ∀ sets ∈ ℤ {1..n} ∃ a number n ∈ ℤ {1..n} of sets m ∈ ℤ {1..n} | ∃ a set c ∈ ℤ {1..n} | ∀ sets m, |c| ≤ |the smallest array in m| | c = the intersection of sets in m
 
 **Algorithm 2 for Generalization**
 
