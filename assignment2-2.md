@@ -140,7 +140,11 @@
 
 >- Returning the Correct Value
 
+>> I built the second algorithm to use the previous one, so if the previous one is assumed to be correct then those parts in the n array intersect are still correct. The n array intersect uses a similar strategy and does an n<sup>2</sup> number of calls to the previous algorithm with an additional n. The algorithm for n array intersect returns the correct value as it checks all possible sets of different array combinations from the array of arrays and only adds to the array intersect array when that array does not contain the value shared by the current arr_all[i] and arr_all[j]. therefore all values in the returned array are unique and all possible combinations of arrays are checked, thus the intersection of the arrays is correctly computed.
+
 >- Halting
+
+>> Like the previous algorithm this one operates on a finite array of finite arrays and so the loops will end and the return will be called halting the algorithm.
 
 **Implementation**
 
