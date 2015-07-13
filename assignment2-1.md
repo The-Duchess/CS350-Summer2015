@@ -5,6 +5,7 @@
 > Due Date: July 14th 13:00 2015
 
 > Problem Description:
+> ∃ a set a ∈ {1, 0} | |a| ≤ n ∈ ℤ | ∃ l ∈ ℤ | l < n | ∃ a set b ∈ {1, 0} | |b| = l
 
 **Algorithm: First Long 1-String**
 
