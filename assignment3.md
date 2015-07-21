@@ -46,9 +46,8 @@
 
                   downheap ← H.root
 
-                  // appends a src to a dest
-                  // append ← src, dest
-                  append ← R, a
+                  // append R to a
+                  append R → a
 
             ↑ a, H
 
@@ -92,7 +91,7 @@
 
 >- Returning the Correct Value
 
->> The algorithm pulls the topmost element, or best, from H and then reorders H each time. So it cannot re-organize H incorrectly, however it does suffer a performance drop which can be solved by grabbing the best m elements and then re-ordering H. however re-ordering becomes more complicated.
+>> The algorithm pulls the topmost element, or best, from H and then reorders H each time. So it cannot re-organize H incorrectly as downheap always pushes elements back down into the correct sorted location, however it does suffer a performance drop which can be solved by grabbing the best m elements and then re-ordering H. however re-ordering becomes more complicated.
 
 >- Halting
 
