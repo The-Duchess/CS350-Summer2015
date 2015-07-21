@@ -125,6 +125,6 @@ Merge Sort has a recurrence T[n] = 2T[n/2] + O(n)
 
 the number of leaves in the recurrence tree = n<sup>log<sub>b</sub>(a)</sup> = n<sup>lg(2)</sup> = n
 
-if f(n) is Θ(n<sup>log<sub>b</sub>(a)</sup>) then T[n] is Θ(n<sup>log<sub>b</sub>(a)lg(n))
+if f(n) is Θ(n<sup>log<sub>b</sub>(a)</sup>) then T[n] is Θ(n<sup>log<sub>b</sub>(a)</sup>lg(n))
 
 therefore T[n] is O(nlg(n))
