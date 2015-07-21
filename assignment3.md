@@ -14,7 +14,9 @@
                           insert: E x H → H,
                           extract-best H → (E, H),
                           empty: H → B,
-                          extract-best-m H, m → (a[], H) >
+                          extract-best-m H, m → (a, H) >
+
+      extract-best-m H, m → (a, H) | a is a set of Elements | ∃ m ≤ |H|, |a| = m
 
 **Brute Force Algorithm Provided**
 
