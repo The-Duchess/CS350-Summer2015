@@ -80,7 +80,7 @@
 
 > input: Two Nodes in a Priority Heap
 
-> output: The better option of the two nodes
+> output: The better option of the Two Nodes
 
       def better_of ← a, b
             if a ⊑ b then ↑ a
