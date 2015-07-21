@@ -31,7 +31,7 @@
 
 > input: Priority Heap H of n Elements. An extraction count m ≤ n
 
-> output: An array containing the best m elements extracted from H, together with modified H
+> output: An array containing the best m elements extracted from H, and modified H.
 
       def extract_best_m ← H, m
 
@@ -55,7 +55,7 @@
 
 > input: Root Node in a Priority Heap
 
-> output: none, it does an in place re-ordering
+> output: None, it does an in place re-ordering
 
       def downheap ← R
 
@@ -71,14 +71,14 @@
 
 > input: Node in a Priority Heap
 
-> output: True if the input is a leaf and false if it is not
+> output: True if the input is a leaf and False if it is not
 
       def is_leaf ← R
             if not R.left and not R.right then ↑ true
 
             ↑ false
 
-> input: Two nodes in a Priority Heap
+> input: Two Nodes in a Priority Heap
 
 > output: The better option of the two nodes
 
