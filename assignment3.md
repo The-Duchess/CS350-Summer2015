@@ -100,7 +100,7 @@
 
 **Show Worst Case of BRUTE-FORCE MEH is O(m lg n)**
 
-> 
+> since the number of iterations is m; and the worst case for extract-best is lg n due to it being a binary tree implementation of a Heap assuming |H| = n; we get m iterations of lg n or O(m lg n).
 
 # **Part 2**
 
