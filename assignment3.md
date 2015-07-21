@@ -37,7 +37,7 @@
 
             a ← []
 
-            if m > n then ↑ a, H
+            if m > |H| then ↑ a, H
 
             for i ← 1..m
                   R ← H.root
