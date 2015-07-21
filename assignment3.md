@@ -116,3 +116,15 @@
       T[n] = T[n/2] + T[n/2] + O(n)
 
 **Master Theorem with this Recurrence**
+
+Merge Sort has a recurrence T[n] = 2T[n/2] + O(n)
+
+- a = 2, b = 2
+
+- f(n) =  Θ(n)
+
+the number of leaves in the recurrence tree = n<sup>log<sub>b</sub>(a)</sup> = n<sup>lg(2)</sup> = n
+
+if f(n) is Θ(n<sup>log<sub>b</sub>(a)</sup>) then T[n] is Θ(n<sup>log<sub>b</sub>(a)lg(n))
+
+therefore T[n] is O(nlg(n))
