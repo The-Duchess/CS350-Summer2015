@@ -98,6 +98,10 @@
 
 >> downheap is the only function that is recursive that has to meet some requirement to return up and it has a termination condition that will always check when there is no more of H to shuffle down assuming a worst case for relocating R. if H is finite and m ≤ n then the number of times this can be run is finite, ans since each version will always halt because H is finite, the algorithm will halt.
 
+**Complexity**
+
+> Since my algorithm does not attempt to pull multiple elements and then reorder it will perform the same as the brute force algorithm and that complexity is covered below.
+
 **Show Worst Case of BRUTE-FORCE MEH is O(m lg n)**
 
 > since the number of iterations is m; and the worst case for extract-best is lg n due to it being a binary tree implementation of a Heap assuming |H| = n; we get m iterations of lg n or O(m lg n).
