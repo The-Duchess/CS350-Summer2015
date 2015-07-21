@@ -109,10 +109,10 @@
 
 # **Part 2**
 
-> Worst Case for Merge Sort is
+**Worst Case for Merge Sort is**
 
       T[0] = 1
       T[1] = 1
       T[n] = T[n/2] + T[n/2] + O(n)
 
-> Master Theorem with this Recurrence
+**Master Theorem with this Recurrence**
