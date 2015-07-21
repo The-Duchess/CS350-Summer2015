@@ -10,7 +10,7 @@
 
 > Problem Description:
 
-      < H; ⊆: E x E; new: P(E),
+      < H; ⊑: E x E; new: P(E),
                           insert: E x H → H,
                           extract-best H → (E, H),
                           empty: H → B,
@@ -59,7 +59,7 @@
 
             if is_leaf ← R then ↑
 
-            if R ⊆ R.left and R ⊆ R.right then ↑
+            if R ⊑ R.left and R ⊑ R.right then ↑
 
             R.good ← better_of ← R.left, R.right
 
@@ -81,9 +81,9 @@
 > output: The better option of the two nodes
 
       def better_of ← a, b
-            if a ⊆ b then ↑ a
+            if a ⊑ b then ↑ a
 
-            if b ⊆ a then ↑ b
+            if b ⊑ a then ↑ b
 
             ↑ a
 
