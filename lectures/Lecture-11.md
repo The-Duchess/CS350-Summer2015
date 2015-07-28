@@ -17,7 +17,7 @@ H <- array
     H[v1, v2] <- (v2, l)
     H[v2, v1] <- (v1, l)
     For v0 in v
-      For (v1, v2) in 
+      For (v1, v2) in v^2
         //if statements
         //we get new vortexes and check if we have a shorter vertex
         //we get H[v1, v2] <- (H[v1, v0]h, H[v1, v0] + H[v2, v0])
