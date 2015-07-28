@@ -12,6 +12,7 @@ Enqueue (v', l + d(v, v') | d(v', g), v) in H
 
 Time O(v^3)
 Space is O(v^2)
+Transient Closure
 H <- array
   For (v1, v2, l) in E
     H[v1, v2] <- (v2, l)
