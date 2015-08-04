@@ -97,7 +97,7 @@
 
 >- Halting
 
->> downheap is the only function that is recursive that has to meet some requirement to return up and it has a termination condition that will always check when there is no more of H to shuffle down assuming a worst case for relocating R. if H is finite and m ≤ n then the number of times this can be run is finite, ans since each version will always halt because H is finite, the algorithm will halt.
+>> downheap is the only function that is recursive that has to meet some requirement to return up and it has a termination condition that will always check when there is no more of H to shuffle down assuming a worst case for relocating R. if H is finite and m ≤ n then the number of times this can be run is finite, and since each version will always halt because H is finite, the algorithm will halt.
 
 **Complexity**
 
