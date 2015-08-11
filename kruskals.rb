@@ -21,7 +21,7 @@ end
 
 file = File.readlines("city-pairs.txt")
 
-lines = file.split("\n")
+lines = file.map { |fr| fr.split("\n").map(&:to_s) }
 
 edges = lines.each { |line| line.split(" ").map(&:to_s) }.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }.sort_by { |v| v[:length].to_i }
 
