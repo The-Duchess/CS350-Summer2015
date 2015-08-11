@@ -27,7 +27,7 @@ class Union_Find
                   temp_chk.each do |t|
                         if t == v_b
 
-                              if len < 2 then next end
+                              if len < 2 then return false end
 
                               return true
                         end
@@ -38,8 +38,6 @@ class Union_Find
                   end
 
                   len = len + 1
-
-                  puts to_do
             end
 
             if len > 1 then return false end
@@ -98,7 +96,7 @@ edges.sort_by! { |v| v[:length] }
 min_tree = []
 
 edges.each do |edge|
-      if set_V.connected(edge[:start], edge[:end])
+      if !set_V.connected(edge[:start], edge[:end])
             min_tree.push(edge)
             set_V.union(edge, edge)
       end
