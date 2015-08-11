@@ -133,16 +133,25 @@ Union
 
       lines = file.map { |fr| fr.split("\n").map(&:to_s) }
 
-      edges = lines.each { |line| line.split(" ").map(&:to_s) }.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }.sort_by { |v| v[:length].to_i }
+      edges = []
 
-      set_V = Union_find.new(lines.length - 1)
+      lines.each do |line|
+            t_tokens = line[0].split(" ").map(&:to_s)
+            t_edge = { :start => t_tokens[0], :end => t_tokens[1], :length => t_tokens[2] }
+            p t_edge
+            edges.push(t_edge)
+      end
+
+      edges.sort_by { |v| v[:length].to_i }
+
+      set_V = Union_Find.new(lines.length - 1)
 
       min_tree = []
 
       edges.each do |edge|
-            if not set_V.connected(edge[:start_p], edge[:end_p])
+            if not set_V.connected(edge[:start], edge[:end])
                   min_tree.push(edge)
-                  set_V.union(edge[:start_p], edge[:end_p])
+                  set_V.union(edge[:start], edge[:end])
             end
       end
 
