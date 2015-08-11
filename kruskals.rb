@@ -47,7 +47,7 @@ class Union_Find
 
       def connected(v_a, v_b)
 
-            if self.path_exists?(v_a, v_b)
+            if path_exists?(v_a, v_b)
                   return true
             end
 
@@ -95,7 +95,8 @@ edges.sort_by! { |v| v[:length] }
 min_tree = []
 
 edges.each do |edge|
-      if not set_V.connected(edge[:start], edge[:end])
+      puts edge
+      if !set_V.connected(edge[:start], edge[:end])
             min_tree.push(edge)
             set_V.union(edge, edge)
       end
