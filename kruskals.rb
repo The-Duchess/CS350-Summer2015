@@ -1,7 +1,7 @@
 #! /usr/bin/env ruby
 
 class Union_Find
-      def initialize(length)
+      def initialize
             @vertices = {}
       end
 
@@ -33,7 +33,7 @@ file = File.readlines("city-pairs.txt")
 
 lines = file.map { |fr| fr.split("\n").map(&:to_s) }
 
-set_V = Union_Find.new(lines.length - 1)
+set_V = Union_Find.new
 
 edges = []
 
