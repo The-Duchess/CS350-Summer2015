@@ -23,8 +23,6 @@ file = File.readlines("city-pairs.txt")
 
 lines = file.map { |fr| fr.split("\n").map(&:to_s) }
 
-p lines
-
 #edges = lines.each.map { |line| line.split(" ").map(&:to_s) }.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }.sort_by { |v| v[:length].to_i }
 
 edges = []
@@ -34,6 +32,8 @@ lines.each do |line|
       t_edge = t_tokens.map { |start_p, end_p, length| { :start_p => start_p, :end_p => end_p, :length => length.to_i } }
       edges.push(t_edge)
 end
+
+edges.each { |a| puts a }
 
 edges.sort_by { |v| v[:length] }
 
