@@ -97,150 +97,21 @@ Union
 
 **Part (b)**
 
+**Implementation of Algorithm**
+
 ```ruby
-      class Union_Find
-            @@elements = []
 
-            def initialize()
-                  # do nothing
-            end
-
-            def add_vertex(t_e)
-
-                  to_insert = false
-
-                  @@elements.each do |a|
-                        if a.name == t_e.name
-                              to_insert = false; break;
-                        end
-                  end
-
-                  if to_insert
-                        @@elements.push(t_e)
-                        self.sort!
-                  end
-            end
-
-            def find
-                  return @@elements
-            end
-
-            def sort!
-                  # do nothing
-            end
-      end
-
-      class Element
-            @@begin = ""
-            @@end = ""
-            @@len = 0
-            @@parent = nil
-            @@name = ""
-
-            def initialize(start, stop, len)
-                  @@begin = start.to_s
-                  @@end = stop.to_s
-                  @@parent = parent
-                  @@len = len
-                  @@name = "#{start_stop}"
-            end
-
-            def start_p
-                  return @@begin
-            end
-
-            def end_p
-                  return @@end
-            end
-
-            def len
-                  return @@len
-            end
-
-            def set_parent(t_parent)
-                  @@parent = t_parent
-            end
-
-            def parent
-                  return @@parent
-            end
-
-            def name
-                  return @@name
-            end
-      end
-
-      def init(t_ea, t_eb, ds, parent)
-
-            t_e = Element.new(t_ea, t_eb, ds)
-
-            t_e.set_parent(parent)
-
-            t_u = Union.new
-
-            t_u.add_vertex(t_e)
-
-            return t_u
-      end
-
-      def find(t_u)
-            t_u.sort!
-
-            t_cur = t_u.elements[t_u.elements.length - 1]
-
-            while t_cur.parent != nil
-                  if t_cur.parent != nil
-                        t_cur = t_cur.parent
-                  else
-                        break
-                  end
-            end
-
-            return t_cur
-
-      end
-
-      def union(t_u_a, t_u_b)
-            E_a = []
-            E_b = []
-            U_t = Union_Find.new
-
-            t_u_a.elements.each { |i| E_a.push(i) }
-            t_u_b.elements.each { |j| E_b.push(j) }
-
-            E_arr = union_set(E_a, E_b)
-
-            E_arr.each do |k|
-                  U_t.add_vertex(k)
-            end
-
-            return U_t
-      end
-
-      def union_set(arr_a, arr_b)
-            t_arr = []
-
-            arr_a.each do |i|
-                  arr_b.each do |j|
-                        if i.start_p == j.start_p and i.end_p == j.end_p and i.len == j.len
-                              t_arr.push(i)
-                        else
-                              next
-                        end
-                  end
-            end
-
-            return t_arr
-      end
 
 ```
 
 # **Part 2**
 
+
+**Implementation of Kruskals**
+
 ```ruby
 
 ```
-
 
 # **Part 3**
 
@@ -394,6 +265,8 @@ Add to solution
                   if n = 6
                         arr[3] += 1
                         ↑
+
+
 **Correctness**
 
 - Returning the Correct Value
