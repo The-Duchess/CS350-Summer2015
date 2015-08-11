@@ -106,30 +106,33 @@ Union
 ```ruby
       class Union_Find
             def initialize
-                  @vertices = {}
+                  @edges = []
             end
 
-            def add_edge(n, sp, ep)
-                  @vertices.store("#{sp}_#{ep}", n.to_i)
+            def add_edge(edge)
+                  @edges.push(edge)
             end
 
-            def connected(v_1, v_2)
-                  t_a = "#{v_1[:start]}_#{v_1[:end]}"
-                  t_b = "#{v_2[:start]}_#{v_2[:end]}"
+            def path_exists?(v_a, v_b)
+                  # if a path exists between v_a and v_b return true
 
-                  if @vertices[:t_a] == @vertices[:t_b]
+                  # set starting edges
+                        # recursively check all possible until either all edges and vertices are exhausted
+
+            end
+
+            def connected(v_a, v_b)
+
+                  if self.path_exists?(v_a, v_b)
                         return true
                   end
 
                   return false
             end
 
-            def union(v_1,v_2)
-                  t_a = "#{v_1[:start]}_#{v_1[:end]}"
-                  t_b = "#{v_2[:start]}_#{v_2[:end]}"
-
-                  vertex_1, vertex_2 = @vertices[:t_a], @vertices[:t_b]
-                  return @vertices.map! { |i| (i == vertex_1) ? vertex_2 : i }
+            def union(v_a, v_b)
+                  edge_1, edge_2 = @edges[:v_a], @edges[:v_b]
+                  @edges.map! { |i| (i == edge_1) ? edge_2 : i }
             end
       end
 ```
@@ -153,15 +156,13 @@ Union
             t_tokens = line[0].split(" ").map(&:to_s)
             t_edge = { :start => t_tokens[0], :end => t_tokens[1], :length => t_tokens[2].to_i }
             edges.push(t_edge)
-            set_V.add_edge(i, t_edge[:start], t_edge[:end])
-            i += 1
+            set_V.add_edge(t_edge)
+            i += 2
       end
 
       i = 0
 
       edges.sort_by! { |v| v[:length] }
-
-      edges.each { |edge| puts edge }
 
       min_tree = []
 
