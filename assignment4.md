@@ -77,7 +77,7 @@ Union
 
 - input: two unions
 - output: a union of the inputs
-- complexity: O(2m + 2n) or O(m + n)
+- complexity: O(2m + 2n + mn) or O(m + n + mn)
 
 > description: creates a union of two unions
 
@@ -86,17 +86,18 @@ Union
             E1 ← []
             E2 ← []
 
-            foreach ← i ∈ u1.v
+            foreach ← i ∈ u1.v // O(m)
                   append i → E1
 
-            foreach ← i ∈ u2.v
+            foreach ← i ∈ u2.v // O(n)
                   append i → E2
 
-            E ← E1 ∪ E2
+            E ← E1 ∪ E2 O(mn)
 
-            foreach ← i ∈ E
+            foreach ← i ∈ E // O(m + n)
                   add_vertex i → U
 
+            ↑ U
 
 **Part (b)**
 
@@ -149,7 +150,7 @@ Union
             t_U = nil
 
             E_t.each do |i|
-                  t_U = Union.new(vertex)
+                  t_U = add_vertex(vertex)
             end
 
             return t_U
