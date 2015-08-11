@@ -109,7 +109,7 @@ Calculate requirements
 
 - input: requirements x, y, z | x is a number of X material and similar for y and z
 - output: minimum collection of conglomerates as an array A..H
-- complexity: O(3n) or O(n)
+- complexity: O(n + m + o) where n, m and o are x, y, z respectively
 
 > description: using preferred high adds first we add to a total (such that we do not exceed the requirements) in the largest increments thus minimizing the number of conglomerates we use.
 
