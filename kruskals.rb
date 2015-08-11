@@ -29,21 +29,21 @@ edges = []
 
 lines.each do |line|
       t_tokens = line[0].split(" ").map(&:to_s)
-      t_edge = t_tokens.map(&:to_s).map { |start_p, end_p, length| { :start_p => start_p, :end_p => end_p, :length => length } }.sort_by { |v| v[:length].to_i }
+      t_edge = t_tokens.map(&:to_s).map { |start_p, end_p, length| { :start => start_p, :end => end_p, :length => length } }.sort_by { |v| v[:length].to_i }
       p t_edge
       edges.push(t_edge)
 end
 
 #edges.sort_by { |v| v[:length].to_i }
 
-set_V = Union_find.new(lines.length - 1)
+set_V = Union_Find.new(lines.length - 1)
 
 min_tree = []
 
 edges.each do |edge|
-      if not set_V.connected(edge[:start_p], edge[:end_p])
+      if not set_V.connected(edge[:start], edge[:end])
             min_tree.push(edge)
-            set_V.union(edge[:start_p], edge[:end_p])
+            set_V.union(edge[:start], edge[:end])
       end
 end
 
