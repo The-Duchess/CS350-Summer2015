@@ -10,6 +10,12 @@ class Union_Find
       end
 
       def connected(v_a, v_b)
+
+            puts v_a[:start]
+            puts v_a[:end]
+            puts v_b[:start]
+            puts v_b[:end]
+
             t_a = "#{v_a[:start]}#{v_b[:end]}"
             t_b = "#{v_b[:start]}#{v_b[:end]}"
 
@@ -50,8 +56,6 @@ end
 i = 0
 
 edges.sort_by! { |v| v[:length] }
-
-edges.each { |edge| puts edge }
 
 min_tree = []
 
