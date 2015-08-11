@@ -44,8 +44,7 @@ class Union_Find
       end
 
       def union(v_a, v_b)
-            edge_1, edge_2 = @edges[:v_a], @edges[:v_b]
-            @edges.map! { |i| (i == edge_1) ? edge_2 : i }
+            @edges.map! { |i| (i == v_a) ? v_b : i }
       end
 end
 
@@ -87,7 +86,7 @@ min_tree = []
 edges.each do |edge|
       if not set_V.connected(edge[:start], edge[:end], vertexes)
             min_tree.push(edge)
-            set_V.union(edge[:start], edge[:end])
+            set_V.union(edge, edge)
       end
 end
 
