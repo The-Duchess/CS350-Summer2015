@@ -414,6 +414,8 @@ Calculate with no restriction on excess
 - output: minimum collection of conglomerates as an array A..H
 - complexity: O(n + m + o) where n, m and o are x, y, z respectively
 
+> description: calculate the 'minimum' number of conglomerates used but do it lazily so we do not care about excess.
+
       def calc ← x, y, z
 
             // conglomerates
