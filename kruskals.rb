@@ -42,6 +42,7 @@ i = 0
 lines.each do |line|
       t_tokens = line[0].split(" ").map(&:to_s)
       t_edge = { :start => t_tokens[0], :end => t_tokens[1], :length => t_tokens[2] }
+      puts t_edge
       edges.push(t_edge)
       set_V.add_edge(i, t_edge[:start], t_edge[:end])
       i += 1
