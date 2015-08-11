@@ -404,7 +404,7 @@ Add to solution
 
 # **Extra Credit**
 
-If we are allowed to waste material, then we must determine an allowable amount of waste, or we cannot have a concrete answer that that can be defined as correct with specified margin for excess thus no algorithm can be considered correct with specified margin for error. so we must add inputs for tolerable level of wasted material; the most accurate is per material but we could have a running total of overflow that cannot be exceeded or must be exceeded. This seems like a somewhat purposeless algorithm since we always want to optimize and unless there is some other cost we want to optimize against why would we allow for waste? but that aside.
+If we are allowed to waste material, then we should determine an allowable amount of waste, or we cannot have a concrete answer that that can be defined as correct with specified margin for excess thus no algorithm can be considered correct with specified margin for error. so we should add inputs for tolerable level of wasted material; the most accurate is per material but we could have a running total of overflow that cannot be exceeded or must be exceeded. This seems like a somewhat purposeless algorithm since we always want to optimize and unless there is some other cost we want to optimize against why would we allow for waste? but that aside and setting limits not being taken into account we can easily just remove the restriction on excess which actually simplifies the algorithm.
 
 **For any allowed excess**
 
