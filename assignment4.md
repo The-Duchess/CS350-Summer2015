@@ -426,7 +426,7 @@ Calculate with no restriction on excess
             G ← [2, 6, 1]
             H ← [0, 1, 2]
 
-            // these can be customized to change the ammount of excess
+            // these can be customized to change the amount of excess
             // but we are allowing so we don't really care
             ARR_x ← [F, D, G, A] // array of conglomerates for X
             ARR_y ← [G, D, E, H, B] // array of conglomerates for y
