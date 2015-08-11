@@ -103,7 +103,7 @@ min_tree = []
 
 edges.each do |edge|
       if set_V.connected(edge[:start], edge[:end])
-            if !check_reverse(edge[:start], edge[:end], edges) then min_tree.push(edge)
+            if !check_reverse(edge[:start], edge[:end], edges) then min_tree.push(edge) end
             set_V.union(edge[:start], edge[:end])
       end
 end
