@@ -22,10 +22,14 @@ class Union_Find
                   done.push(temp)
                   temp_chk = []
                   @edges.each { |e| if e[:start] == temp then temp_chk.push(e[:end]) end }
-                  if temp_chk.include? v_b
-                        return true
-                  if !done.include? temp
-                        temp_chk.each { |c| to_do.push(c) }
+                  temp_chk.each do |t|
+                        if t == v_b
+                              return true
+                        end
+
+                        if !done.include? t
+                              to_do.push(t)
+                        end
                   end
             end
 
