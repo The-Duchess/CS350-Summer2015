@@ -36,7 +36,7 @@ class Union_Find
             return false
       end
 
-      def connected(v_a, v_b, vertices)
+      def connected(v_a, v_b)
 
             if self.path_exists?(v_a, v_b)
                   return true
