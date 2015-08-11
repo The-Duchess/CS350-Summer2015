@@ -203,8 +203,9 @@ Union
       min_tree = []
 
       edges.each do |edge|
-            if !set_V.connected(edge[:start], edge[:end])
-                  min_tree.push(edge)
+            if set_V.connected(edge[:start], edge[:end])
+                  min_tree.push(edge[:start])
+                  min_tree.push(edge[:end])
                   set_V.union(edge, edge)
             end
       end
