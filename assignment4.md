@@ -174,7 +174,7 @@ Compare conglomerates
                   c ← false
 
                   for i ← 1..3
-                        if cur[i] + add[i] ≤ req[i] and c
+                        if cur[i] + add[i] ≤ req[i] and (c or true if i = 1)
                               c ← true
                         else
                               c ← false
