@@ -35,6 +35,8 @@ class Union_Find
                   end
 
                   len = len + 1
+
+                  puts to_do
             end
 
             if len > 1 then return false end
