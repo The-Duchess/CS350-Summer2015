@@ -29,11 +29,16 @@ edges = []
 
 lines.each do |line|
       t_tokens = line[0].split(" ").map(&:to_s)
+      p tokens
+      p t_tokens.map do |start_p, end_p, length|
+            p start_p
+            p end_p
+            p length
+      end
+
       t_edge = t_tokens.map { |start_p, end_p, length| { :start_p => start_p, :end_p => end_p, :length => length.to_i } }
       edges.push(t_edge)
 end
-
-edges.each { |a| puts a }
 
 edges.sort_by { |v| v[:length] }
 
