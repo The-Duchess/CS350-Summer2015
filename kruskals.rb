@@ -61,6 +61,7 @@ def check_reverse(v_a, v_b, edges)
       edges.each do |v|
             if (v[:start] == v_a and v[:end] == v_b) or (v[:end] == v_a and v[:start] == v_b)
                   return true
+            end
       end
 
       return false
@@ -103,7 +104,9 @@ min_tree = []
 
 edges.each do |edge|
       if set_V.connected(edge[:start], edge[:end])
-            if !check_reverse(edge[:start], edge[:end], edges) then min_tree.push(edge) end
+            if !check_reverse(edge[:start], edge[:end], edges)
+                  min_tree.push(edge)
+            end
             set_V.union(edge[:start], edge[:end])
       end
 end
