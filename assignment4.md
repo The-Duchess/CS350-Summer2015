@@ -24,7 +24,7 @@ Union-Find
 
       ELEMENT: Tuple of start and end
 
-      < E; BEGIN, END, Parent → E;
+      < E; BEGIN, END, PARENT;
                               new: B, N, P → E,
                               start: E → B,
                               end: E → N,
