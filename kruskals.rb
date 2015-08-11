@@ -27,7 +27,7 @@ class Union_Find
                   temp_chk.each do |t|
                         if t == v_b
 
-                              if len < 2 then return false end
+                              if len < 2 then next end
 
                               return true
                         end
@@ -40,10 +40,7 @@ class Union_Find
                   len = len + 1
             end
 
-            if len > 1 then return false end
-
-
-            return true
+            return false
       end
 
       def connected(v_a, v_b)
