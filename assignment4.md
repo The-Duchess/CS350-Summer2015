@@ -104,108 +104,23 @@ Union
 **Implementation of Algorithm**
 
 ```ruby
-      class Vertex
-            def initialize(start_p, end_p, parent, left, right, weight)
-                  @start_p = start
-                  @end_p = end_p
-                  @parent = parent
-                  @left = left
-                  @right = right
-                  @weight = weight
-                  @name = "#{@start_p}, #{@end_p}, #{@weight}"
-            end
-      end
-
-      class Union
-            def initialize
-                  @vertices = []
-                  # do nothing
+      class Union_Find
+            def initialize(length)
+                  @vertices = Array.new(size=length.to_i)
             end
 
-            def initialize(vertex)
-                  @vertices = []
-                  @vertices.push(vertex)
-            end
-
-            def add_vertex(vertex)
-                  if !@vertices.include? vertex
-                        @vertices.push(vertex)
+            def connected(v_1, v_2)
+                  if @vertices[v_1] == @vertices[v_2]
+                        return true
                   end
 
-                  self.sort!
+                  return false
             end
 
-            def sort!
-                  # sort by weight
+            def union(v_1,v_2)
+                  vertex_1, vertex_2 = @vertices[v_1], @vertices[v_2]
+                  @vertices.map! {|i| (i == leader_1) ? leader_2 : i }
             end
-      end
-
-      def add_vertex(vertex)
-            return Union.new(vertex)
-      end
-
-      def init(vertex)
-            E_t = []
-            E_t.push(vertex)
-            t_U = nil
-
-            E_t.each do |i|
-                  t_U = add_vertex(vertex)
-            end
-
-            return t_U
-      end
-
-      def find(union)
-            union.sort!
-
-            cur = union.vertices[union.vertices.length - 1]
-
-            while cur.parent != nil
-                  if cur.parent != nil
-                        cur = cur.parent
-                  else
-                        break
-                  end
-            end
-
-            return cur
-      end
-
-      def union(union_1, union_2)
-            E_a = []
-            E_b = []
-            t_U = Union.new
-
-            union_1.vertices do |v|
-                  E_a.push(v)
-            end
-
-            union_2.vertices do |v|
-                  E_b.push(v)
-            end
-
-            E_c = arr_union(E_a, E_b)
-
-            E_c.each do |c|
-                  t_U.add_vertex(c)
-            end
-
-            return t_U
-      end
-
-      def arr_union(arr_a, arr_b)
-            arr_c = []
-
-            arr_a.each do |a|
-                  arr_b.each do |b|
-                        if a.name == b.name
-                              arr_c.push(a)
-                        end
-                  end
-            end
-
-            return arr_c
       end
 ```
 
@@ -214,26 +129,29 @@ Union
 **Implementation of Kruskals**
 
 ```ruby
-      def kruskals(union_1, union_2)
-            union_1.sort!
-            union_2.sort!
-            a = Union.new
+      file = File.readlines("city-pairs.txt")
 
-            set_V = []
+      lines = file.split("\n")
 
-            union.vertices.each do |v|
-                  set_V.push(v)
+      edges = lines.each { |line| line.split(" ").map(&:to_s) }.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }.sort_by { |v| v[:length].to_i }
+
+      set_V = Union_find.new(lines.length - 1)
+
+      min_tree = []
+
+      edges.each do |edge|
+            if not set_V.connected(edge[:start_p], edge[:end_p])
+                  min_tree.push(edge)
+                  set_V.union(edge[:start_p], edge[:end_p])
             end
-
-            set_V.each |u, v|
-                  if find(u) == find(v)
-                        a = union(a, [u, v])
-                  end
-            end
-
-            return a
       end
+
+      puts min_tree
 ```
+
+**Minimum Spanning Tree**
+
+
 
 # **Part 3**
 
