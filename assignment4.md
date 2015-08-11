@@ -244,6 +244,8 @@ Union
 
 # **Part 3**
 
+**Algorithm**
+
 Conglomerate (label): materials
 
       Alphium (A): X
@@ -392,3 +394,16 @@ Add to solution
                   if n = 6
                         arr[3] += 1
                         ↑
+**Correctness**
+
+- Returning the Correct Value
+
+> The algorithm arranges a number of hardcoded values to create preference and then it keeps track of the current progress relative to the requirements such that it never adds when the total will exceed the requirements; this is checked by compare which will check all materials. After adds are done it uses add to increment the correct element in the solution array that is organized A..H for the conglomerates. Therefore all values are correct and the numbers that represent amounts of A..H are accurate and no higher than they need to be.
+
+- Halting
+
+> The Algorithm can never fail to add some value due to waiting for the values to be equal to the requirements. but it will continue to the next material when it is complete and when they are all done A..H use will return. therefore it will halt.
+
+**Complexity**
+
+> The Algorithm performs 3 checks against the requirements that will at worst increment the number of times of the requirement therefore the complexity is O(n+m+o).
