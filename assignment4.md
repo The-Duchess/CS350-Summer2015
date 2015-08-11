@@ -480,7 +480,7 @@ Calculate with no restriction on excess
 
 - Returning the Correct Value
 
-> The Algorithm cannot determine a specific range of correct values, the only correctness we can show is that the materials required will be either equal to or greater than that which is needed. as the algorithm follows the same basic idea as one restricted to zero excess but it allows for the the current material being assessed to exceed and it does not check other material excesses. but because it will always break when it has met the required materials and the outer check for all materials is finite and inputs should be finite the algorithm will halt.
+> The Algorithm cannot determine a specific range of correct values, the only correctness we can show is that the materials required will be either equal to or greater than that which is needed. as the algorithm follows the same basic idea as one restricted to zero excess but it allows for the the current material being assessed to exceed and it does not check other material excesses. but because it will always break when it has met the required materials and the outer check for all materials is finite and inputs should be finite therefore the algorithm will halt.
 
 - Halting
 
