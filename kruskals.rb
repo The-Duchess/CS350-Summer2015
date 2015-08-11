@@ -21,7 +21,7 @@ class Union_Find
                   to_do.delete_at(0)
                   done.push(done)
                   temp_chk = []
-                  @edges.each { |e| if e[:start] == temp then temp_chk.push(e[:end]) }
+                  @edges.each { |e| if e[:start] == temp then temp_chk.push(e[:end]) end }
                   if temp_chk.include? v_b
                         return true
                   else
