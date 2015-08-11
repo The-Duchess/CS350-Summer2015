@@ -26,6 +26,9 @@ class Union_Find
                   @edges.each { |e| if e[:start] == temp then temp_chk.push(e[:end]) end }
                   temp_chk.each do |t|
                         if t == v_b
+
+                              if len < 2 then next end
+
                               return true
                         end
 
