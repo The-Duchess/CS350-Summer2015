@@ -6,6 +6,9 @@ class Union_Find
       end
 
       def connected(v_1, v_2)
+            puts @vertices
+            puts v_1
+            puts v_2
             if @vertices[v_1] == @vertices[v_2]
                   return true
             end
@@ -28,7 +31,6 @@ edges = []
 lines.each do |line|
       t_tokens = line[0].split(" ").map(&:to_s)
       t_edge = { :start => t_tokens[0], :end => t_tokens[1], :length => t_tokens[2] }
-      p t_edge
       edges.push(t_edge)
 end
 
