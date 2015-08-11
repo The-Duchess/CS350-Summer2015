@@ -41,11 +41,14 @@ Init
 
       def init ← e
 
+          set_parent ← e
+
           E ← []
           append e → E
 
           foreach ← i ∈ E
                 add_vertex i → t_U
+
 
           ↑ t_U
 
