@@ -98,7 +98,7 @@ edges.sort_by! { |v| v[:length] }
 min_tree = []
 
 edges.each do |edge|
-      if !set_V.connected(edge[:start], edge[:end])
+      if set_V.connected(edge[:start], edge[:end])
             min_tree.push(edge)
             set_V.union(edge, edge)
       end
