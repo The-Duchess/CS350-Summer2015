@@ -94,7 +94,7 @@ Union
 
 # **Part 3**
 
-Comglomerate (label): materials
+Conglomerate (label): materials
 
       Alphium (A): X
       Betium (B):  Y
@@ -109,6 +109,9 @@ Calculate requirements
 
 - input: requirements x, y, z | x is a number of X material and similar for y and z
 - output: minimum collection of conglomerates as an array A..H
+- complexity: O(3n) or O(n)
+
+> description: using preferred high adds first we add to a total (such that we do not exceed the requirements) in the largest increments thus minimizing the number of conglomerates we use.
 
 
       def calc ← x, y, z
@@ -143,21 +146,21 @@ Calculate requirements
                                           CUR[0] += ARR_x[j][0]
                                           CUR[1] += ARR_x[j][1]
                                           CUR[2] += ARR_x[j][2]
-                                          add ← j, "x", SOL
+                                          add ← j, "x", ref SOL
                         else if i = 2 // y
                               for j ← 1..|ARR_y|
                                     if compare ← CUR, REQ, ARR_y[j]
                                           CUR[0] += ARR_x[j][0]
                                           CUR[1] += ARR_x[j][1]
                                           CUR[2] += ARR_x[j][2]
-                                          add ← j, "y", SOL
+                                          add ← j, "y", ref SOL
                         else // z
                               for j ← 1..|ARR_z|
                                     if compare ← CUR, REQ, ARR_z[j]
                                           CUR[0] += ARR_x[j][0]
                                           CUR[1] += ARR_x[j][1]
                                           CUR[2] += ARR_x[j][2]
-                                          add ← j, "z", SOL
+                                          add ← j, "z", ref SOL
 
                        ↑ SOL
 
@@ -165,7 +168,7 @@ Compare conglomerates
 
 - input: three arrays cur, req, add
 - output: true if can be added, false if cannot
-
+- complexity: O(3)
 
       def compare ← cur, reg, add
             c ← false
@@ -183,7 +186,7 @@ Add to solution
 
 - input: int, char, array
 - output: changes in place by reference so none
-
+- complexity: O(1)
 
       def add ← n, c, arr
 
@@ -235,5 +238,3 @@ Add to solution
                   if n = 6
                         arr[3] += 1
                         ↑
-
-hold
