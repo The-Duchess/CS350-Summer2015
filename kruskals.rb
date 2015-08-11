@@ -103,7 +103,7 @@ edges.sort_by! { |v| v[:length] }
 min_tree = []
 
 edges.each do |edge|
-      if set_V.connected(edge[:start], edge[:end])
+      if !set_V.connected(edge[:start], edge[:end])
             if !check_reverse(edge[:start], edge[:end], min_tree)
                   min_tree.push(edge)
             end
