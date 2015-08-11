@@ -49,7 +49,7 @@ end
 
 i = 0
 
-edges.sort_by { |v| v[:length] }
+edges.sort_by! { |v| v[:length] }
 
 edges.each { |edge| puts edge }
 
