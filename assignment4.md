@@ -170,16 +170,16 @@ Compare conglomerates
 - output: true if can be added, false if cannot
 - complexity: O(3)
 
-      def compare ← cur, reg, add
-            c ← false
+            def compare ← cur, reg, add
+                  c ← false
 
-            for i ← 1..3
-                  if cur[i] + add[i] ≤ req[i] and c
-                        c ← true
-                  else
-                        c ← false
+                  for i ← 1..3
+                        if cur[i] + add[i] ≤ req[i] and c
+                              c ← true
+                        else
+                              c ← false
 
-            ↑ c
+                  ↑ c
 
 
 Add to solution
@@ -188,53 +188,53 @@ Add to solution
 - output: changes in place by reference so none
 - complexity: O(1)
 
-      def add ← n, c, arr
+            def add ← n, c, arr
 
-            if c = "x"
-                  if n = 1
-                        arr[6] += 1
-                        ↑
-                  if n = 2
-                        arr[4] += 1
-                        ↑
-                  if n = 3
-                        arr[7] += 1
-                        ↑
-                  if n = 4
-                        arr[1] += 1
-                        ↑
-            else if c = "y"
-                  if n = 1
-                        arr[7] += 1
-                        ↑
-                  if n = 2
-                        arr[4] += 1
-                        ↑
-                  if n = 3
-                        arr[5] += 1
-                        ↑
-                  if n = 4
-                        arr[8] += 1
-                        ↑
-                  if n = 5
-                        arr[2] += 1
-                        ↑
-            else if c = "z"
-                  if n = 1
-                        arr[5] += 1
-                        ↑
-                  if n = 2
-                        arr[6] += 1
-                        ↑
-                  if n = 3
-                        arr[8] += 1
-                        ↑
-                  if n = 4
-                        arr[7] += 1
-                        ↑
-                  if n = 5
-                        arr[4] += 1
-                        ↑
-                  if n = 6
-                        arr[3] += 1
-                        ↑
+                  if c = "x"
+                        if n = 1
+                              arr[6] += 1
+                              ↑
+                        if n = 2
+                              arr[4] += 1
+                              ↑
+                        if n = 3
+                              arr[7] += 1
+                              ↑
+                        if n = 4
+                              arr[1] += 1
+                              ↑
+                  else if c = "y"
+                        if n = 1
+                              arr[7] += 1
+                              ↑
+                        if n = 2
+                              arr[4] += 1
+                              ↑
+                        if n = 3
+                              arr[5] += 1
+                              ↑
+                        if n = 4
+                              arr[8] += 1
+                              ↑
+                        if n = 5
+                              arr[2] += 1
+                              ↑
+                  else if c = "z"
+                        if n = 1
+                              arr[5] += 1
+                              ↑
+                        if n = 2
+                              arr[6] += 1
+                              ↑
+                        if n = 3
+                              arr[8] += 1
+                              ↑
+                        if n = 4
+                              arr[7] += 1
+                              ↑
+                        if n = 5
+                              arr[4] += 1
+                              ↑
+                        if n = 6
+                              arr[3] += 1
+                              ↑
