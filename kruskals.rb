@@ -47,9 +47,6 @@ class Union_Find
 
       def connected(v_a, v_b)
 
-            puts v_a
-            puts v_b
-
             if path_exists?(v_a, v_b)
                   return true
             end
