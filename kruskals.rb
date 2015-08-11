@@ -9,7 +9,7 @@ class Union_Find
             @edges.push(edge)
       end
 
-      def path_exists?(v_a, v_b, vertices)
+      def path_exists?(v_a, v_b)
             # if a path exists between v_a and v_b return true
             to_do = []
             to_do.push(v_a)
@@ -19,12 +19,12 @@ class Union_Find
             while !to_do.empty?
                   temp = to_do[0]
                   to_do.delete_at(0)
-                  done.push(done)
+                  done.push(temp)
                   temp_chk = []
                   @edges.each { |e| if e[:start] == temp then temp_chk.push(e[:end]) end }
                   if temp_chk.include? v_b
                         return true
-                  else
+                  if !done.include? temp
                         temp_chk.each { |c| to_do.push(c) }
                   end
             end
@@ -33,8 +33,6 @@ class Union_Find
       end
 
       def connected(v_a, v_b, vertices)
-
-            @edges.each { |v| if v[:start] == v_a and v[:end] == v_b then return false end }
 
             if self.path_exists?(v_a, v_b)
                   return true
@@ -84,7 +82,7 @@ edges.sort_by! { |v| v[:length] }
 min_tree = []
 
 edges.each do |edge|
-      if not set_V.connected(edge[:start], edge[:end], vertexes)
+      if not set_V.connected(edge[:start], edge[:end])
             min_tree.push(edge)
             set_V.union(edge, edge)
       end
