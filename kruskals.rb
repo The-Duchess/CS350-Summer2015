@@ -23,7 +23,17 @@ file = File.readlines("city-pairs.txt")
 
 lines = file.map { |fr| fr.split("\n").map(&:to_s) }
 
-edges = lines.each.map { |line| line.split(" ") }.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }.sort_by { |v| v[:length].to_i }
+#edges = lines.each.map { |line| line.split(" ").map(&:to_s) }.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }.sort_by { |v| v[:length].to_i }
+
+edges = []
+
+lines.each do |line|
+      t_tokens = line.split(" ").map(&:to_s)
+      t_edge = t_tokens.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }
+      edges.push(t_edge)
+end
+
+edges.sort_by { |v| v[:length].to_i }
 
 set_V = Union_find.new(lines.length - 1)
 
