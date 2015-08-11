@@ -16,6 +16,8 @@ class Union_Find
 
             done = []
 
+            len = 0
+
             while !to_do.empty?
                   temp = to_do[0]
                   to_do.delete_at(0)
@@ -31,9 +33,14 @@ class Union_Find
                               to_do.push(t)
                         end
                   end
+
+                  len = len + 1
             end
 
-            return false
+            if len > 1 then return false end
+
+
+            return true
       end
 
       def connected(v_a, v_b)
