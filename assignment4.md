@@ -399,4 +399,88 @@ Add to solution
 
 > The Algorithm performs 3 checks against the requirements that will at worst increment the number of times of the requirement therefore the complexity is O(n+m+o).
 
-**Extra Credit**
+# **Extra Credit**
+
+If we are allowed to waste material, then we must determine an allowable amount of waste, or we cannot have a concrete answer that that can be defined as correct with specified margin for excess thus no algorithm can be considered correct with specified margin for error. so we must add inputs for tolerable level of wasted material; the most accurate is per material but we could have a running total of overflow that cannot be exceeded or must be exceeded. This seems like a somewhat purposeless algorithm since we always want to optimize and unless there is some other cost we want to optimize against why would we allow for waste? but that aside.
+
+**For any allowed excess**
+
+Calculate with no restriction on excess
+
+- input: requirements x, y, z | x is a number of X material and similar for y and z
+- output: minimum collection of conglomerates as an array A..H
+- complexity: O(n + m + o) where n, m and o are x, y, z respectively
+
+      def calc ← x, y, z
+
+            // conglomerates
+            A ← [1, 0, 0]
+            B ← [0, 1, 0]
+            C ← [0, 0, 1]
+            D ← [3, 3, 1]
+            E ← [0, 2, 5]
+            F ← [6, 0, 2]
+            G ← [2, 6, 1]
+            H ← [0, 1, 2]
+
+            // these can be customized to change the ammount of excess
+            // but we are allowing so we don't really care
+            ARR_x ← [F, D, G, A] // array of conglomerates for X
+            ARR_y ← [G, D, E, H, B] // array of conglomerates for y
+            ARR_z ← [E, F, H, G, D, C] // array of conglomerates for z
+
+            REQ ← [x, y, z] // requirements from input
+            CUR ← [0, 0, 0] // progress in filling requirements for x, y, z
+
+            // array of the number of materials X, Y, Z by conglomerates A..H
+            SOL ← [0, 0, 0, 0, 0, 0, 0, 0]
+
+            for i ← 1..3
+
+                  // when progress is not complete keep trying to fill the requirements
+                  // this time allow excess by removing the compare
+                  // and breaking after the specific value is at least meeting the requirements
+                  while REQ[i] > CUR[i] do
+                        if i = 1 // x
+                              for j ← 1..|ARR_x|
+                                    if CUR[i] ≥ REQ[i]
+                                          break
+
+                                    CUR[1] += ARR_x[j][1]
+                                    CUR[2] += ARR_x[j][2]
+                                    CUR[3] += ARR_x[j][3]
+                                    add ← j, "x", ref SOL
+                        else if i = 2 // y
+                              for j ← 1..|ARR_y|
+                                    if CUR[i] ≥ REQ[i]
+                                          break
+
+                                    CUR[1] += ARR_x[j][1]
+                                    CUR[2] += ARR_x[j][2]
+                                    CUR[3] += ARR_x[j][3]
+                                    add ← j, "y", ref SOL
+                        else // z
+                              for j ← 1..|ARR_z|
+                                    if CUR[i] ≥ REQ[i]
+                                          break
+
+                                    CUR[1] += ARR_x[j][1]
+                                    CUR[2] += ARR_x[j][2]
+                                    CUR[3] += ARR_x[j][3]
+                                    add ← j, "z", ref SOL
+
+            ↑ SOL
+
+**Correctness**
+
+- Returning the Correct Value
+
+> The Algorithm cannot determine a specific range of correct values, the only correctness we can show is that the materials required will be either equal to or greater than that which is needed. as the algorithm follows the same basic idea as one restricted to zero excess but it allows for the the current material being assessed to exceed and it does not check other material excesses. but because it will always break when it has met the required materials and the outer check for all materials is finite and inputs should be finite the algorithm will halt.
+
+- Halting
+
+> The Algorithm can never fail to add some value due to waiting for the values to be equal or greater to the requirements. but it will continue to the next material when it is equal or greater to the requirement and when they are all done A..H use will return. therefore it will halt.
+
+**Complexity**
+
+> The Algorithm performs 3 checks against the requirements that will at worst increment the number of times of the requirement therefore the complexity is O(n+m+o). however due to the lack of caring about excess the algorithm will perform no worse than the original and in some implementations and cases it may perform better.
