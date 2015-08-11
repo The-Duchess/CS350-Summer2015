@@ -30,7 +30,7 @@ edges = []
 lines.each do |line|
       t_tokens = line[0].split(" ").map(&:to_s)
       p t_tokens
-      p t_tokens.map do |start_p, end_p, length|
+      t_tokens.map do |start_p, end_p, length|
             p start_p
             p end_p
             p length
