@@ -24,11 +24,12 @@ Union-Find
 
       ELEMENT: Tuple of start and end
 
-      < E; BEGIN, END, PARENT;
-                              new: B, N, P → E,
-                              start: E → B,
-                              end: E → N,
-                              parent: E → P >
+      < E; BEGIN, END, PARENT, NAME;
+                              new: E, E, E, S → E,
+                              start: E → E,
+                              end: E → E,
+                              parent: E → E,
+                              name: E → S >
 
 Init
 
