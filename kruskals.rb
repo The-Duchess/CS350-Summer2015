@@ -6,12 +6,12 @@ class Union_Find
       end
 
       def add_edge(n, sp, ep)
-            @vertices.store("#{sp}_#{ep}", n.to_i)
+            @vertices.store("#{sp}#{ep}", n.to_i)
       end
 
-      def connected(v_1, v_2)
-            t_a = "#{v_1[:start]}_#{v_1[:end]}"
-            t_b = "#{v_2[:start]}_#{v_2[:end]}"
+      def connected(v_a, v_b)
+            t_a = "#{v_a[:start]}#{v_b[:end]}"
+            t_b = "#{v_b[:start]}#{v_b[:end]}"
 
             if @vertices[:t_a] == @vertices[:t_b]
                   return true
@@ -20,9 +20,9 @@ class Union_Find
             return false
       end
 
-      def union(v_1,v_2)
-            t_a = "#{v_1[:start]}_#{v_1[:end]}"
-            t_b = "#{v_2[:start]}_#{v_2[:end]}"
+      def union(v_a,v_b)
+            t_a = "#{v_a[:start]}_#{v_a[:end]}"
+            t_b = "#{v_b[:start]}_#{v_b[:end]}"
 
             vertex_1, vertex_2 = @vertices[:t_a], @vertices[:t_b]
             return @vertices.map! { |i| (i == vertex_1) ? vertex_2 : i }
