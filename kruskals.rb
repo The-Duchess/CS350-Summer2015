@@ -57,6 +57,15 @@ class Union_Find
       end
 end
 
+def check_reverse(v_a, v_b, edges)
+      edges.each do |v|
+            if (v[:start] == v_a and v[:end] == v_b) or (v[:end] == v_a and v[:start] == v_b)
+                  return true
+      end
+
+      return false
+end
+
 file = File.readlines("city-pairs.txt")
 
 lines = file.map { |fr| fr.split("\n").map(&:to_s) }
@@ -94,9 +103,8 @@ min_tree = []
 
 edges.each do |edge|
       if set_V.connected(edge[:start], edge[:end])
-            if !min_tree.include? edge[:start] then min_tree.push(edge[:start]) end
-            if !min_tree.include? edge[:end] then min_tree.push(edge[:end]) end
-            set_V.union(edge, edge)
+            if !check_reverse(edge[:start], edge[:end], edges) then min_tree.push(edge)
+            set_V.union(edge[:start], edge[:end])
       end
 end
 
