@@ -57,9 +57,9 @@ class Union_Find
       end
 end
 
-def check_reverse(v_a, v_b, edges)
+def check_reverse(v_a, v_b, edges, min_tree, edge)
       edges.each do |v|
-            if (v[:start] == v_a and v[:end] == v_b) or (v[:end] == v_a and v[:start] == v_b)
+            if ((v[:start] == v_a and v[:end] == v_b) or (v[:end] == v_a and v[:start] == v_b)) and min_tree.include? edge
                   return true
             end
       end
@@ -104,7 +104,7 @@ min_tree = []
 
 edges.each do |edge|
       if set_V.connected(edge[:start], edge[:end])
-            if !check_reverse(edge[:start], edge[:end], edges)
+            if !check_reverse(edge[:start], edge[:end], edges, min_tree, edge)
                   min_tree.push(edge)
             end
             set_V.union(edge[:start], edge[:end])
