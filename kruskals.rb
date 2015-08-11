@@ -21,8 +21,8 @@ class Union_Find
       end
 
       def union(v_a,v_b)
-            t_a = "#{v_a[:start]}_#{v_a[:end]}"
-            t_b = "#{v_b[:start]}_#{v_b[:end]}"
+            t_a = "#{v_a[:start]}#{v_a[:end]}"
+            t_b = "#{v_b[:start]}#{v_b[:end]}"
 
             vertex_1, vertex_2 = @vertices[:t_a], @vertices[:t_b]
             return @vertices.map! { |i| (i == vertex_1) ? vertex_2 : i }
