@@ -11,6 +11,25 @@ class Union_Find
 
       def path_exists?(v_a, v_b, vertices)
             # if a path exists between v_a and v_b return true
+            to_do = []
+            to_do.push(v_a)
+
+            done = []
+
+            while !to_do.empty?
+                  temp = to_do[0]
+                  to_do.delete_at(0)
+                  done.push(done)
+                  temp_chk = []
+                  @edges.each { |e| if e[:start] == temp then temp_chk.push(e[:end]) }
+                  if temp_chk.include? v_b
+                        return true
+                  else
+                        temp_chk.each { |c| to_do.push(c) }
+                  end
+            end
+
+            return false
       end
 
       def connected(v_a, v_b, vertices)
