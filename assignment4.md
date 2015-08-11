@@ -1,5 +1,9 @@
 # **Assignment 4**
 
+Author: Isaac Archer
+
+Due Date: August 11, 2015 13:00
+
 # **Part 1**
 
 **Part (a)**
