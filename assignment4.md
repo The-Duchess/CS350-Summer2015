@@ -113,15 +113,43 @@ Union
                   @edges.push(edge)
             end
 
-            def path_exists?(v_a, v_b, vertices)
+            def path_exists?(v_a, v_b)
                   # if a path exists between v_a and v_b return true
+                  to_do = []
+                  to_do.push(v_a)
+
+                  done = []
+
+                  len = 0
+
+                  while !to_do.empty?
+                        temp = to_do[0]
+                        to_do.delete_at(0)
+                        done.push(temp)
+                        temp_chk = []
+                        @edges.each { |e| if e[:start] == temp then temp_chk.push(e[:end]) end }
+                        temp_chk.each do |t|
+                              if t == v_b
+
+                                    if len < 2 then next end
+
+                                    return true
+                              end
+
+                              if !done.include? t
+                                    to_do.push(t)
+                              end
+                        end
+
+                        len = len + 1
+                  end
+
+                  return false
             end
 
-            def connected(v_a, v_b, vertices)
+            def connected(v_a, v_b)
 
-                  @edges.each { |v| if v[:start] == v_a and v[:end] == v_b then return false end }
-
-                  if self.path_exists?(v_a, v_b)
+                  if path_exists?(v_a, v_b)
                         return true
                   end
 
@@ -129,8 +157,7 @@ Union
             end
 
             def union(v_a, v_b)
-                  edge_1, edge_2 = @edges[:v_a], @edges[:v_b]
-                  @edges.map! { |i| (i == edge_1) ? edge_2 : i }
+                  @edges.map! { |i| (i == v_a) ? v_b : i }
             end
       end
 ```
@@ -176,9 +203,9 @@ Union
       min_tree = []
 
       edges.each do |edge|
-            if not set_V.connected(edge[:start], edge[:end], vertexes)
+            if !set_V.connected(edge[:start], edge[:end])
                   min_tree.push(edge)
-                  set_V.union(edge[:start], edge[:end])
+                  set_V.union(edge, edge)
             end
       end
 
