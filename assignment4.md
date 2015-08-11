@@ -230,6 +230,11 @@ Union
 
 # **Part 2**
 
+```ruby
+
+```
+
+
 # **Part 3**
 
 Conglomerate (label): materials
@@ -300,7 +305,7 @@ Calculate requirements
                                           CUR[2] += ARR_x[j][2]
                                           add ← j, "z", ref SOL
 
-                       ↑ SOL
+            ↑ SOL
 
 Compare conglomerates
 
