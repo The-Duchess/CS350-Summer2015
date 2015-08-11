@@ -2,7 +2,7 @@
 
 class Union_Find
       def initialize(length)
-            @vertices = Array.new(size=length.to_i)
+            @vertices = (0..length).to_a
       end
 
       def connected(v_1, v_2)
@@ -15,7 +15,7 @@ class Union_Find
 
       def union(v_1,v_2)
             vertex_1, vertex_2 = @vertices[v_1], @vertices[v_2]
-            @vertices.map! {|i| (i == leader_1) ? leader_2 : i }
+            @vertices.map! {|i| (i == vertex_1) ? vertex_2 : i }
       end
 end
 
