@@ -31,11 +31,11 @@ edges = []
 
 lines.each do |line|
       t_tokens = line[0].split(" ").map(&:to_s)
-      t_edge = t_tokens.map { |start_p, end_p, length| { :start_p => from, :end_p => to, :length => length } }
+      t_edge = t_tokens.map { |start_p, end_p, length| { :start_p => start_p, :end_p => end_p, :length => length.to_i } }
       edges.push(t_edge)
 end
 
-edges.sort_by { |v| v[:length].to_i }
+edges.sort_by { |v| v[:length] }
 
 set_V = Union_find.new(lines.length - 1)
 
