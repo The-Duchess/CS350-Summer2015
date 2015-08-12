@@ -388,7 +388,7 @@ Calculate requirements in polynomial time
 
 - input: x, y, z integers of the respective material, current progress on those three and the solution
 - output: minimum collection of conglomerates as an array A..H
-- complexity: O(nmo)
+- complexity: O(n<sup>2</sup>)
 
 > description: polynomial time version
 
