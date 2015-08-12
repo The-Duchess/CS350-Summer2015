@@ -226,7 +226,7 @@ Union
 
 **Minimum Spanning Tree**
 
-
+INCLUDED AS A FILE
 
 # **Part 3**
 
@@ -244,6 +244,8 @@ Conglomerate (label): materials
       Herium (H):  YZZ (Y2Z)
 
 Calculate requirements
+
+NOTE: Polynomial version is below linear one
 
 - input: requirements x, y, z | x is a number of X material and similar for y and z
 - output: minimum collection of conglomerates as an array A..H
@@ -382,19 +384,76 @@ Add to solution
                         ↑
 
 
+Calculate requirements in polynomial time
+
+- input: x, y, z integers of the respective material, current progress on those three and the solution
+- output: minimum collection of conglomerates as an array A..H
+- complexity: O(nmo)
+
+> description: polynomial time version
+
+      def calc ← x, y, z, sol
+
+            // conglomerates
+            A ← [1, 0, 0]
+            B ← [0, 1, 0]
+            C ← [0, 0, 1]
+            D ← [3, 3, 1]
+            E ← [0, 2, 5]
+            F ← [6, 0, 2]
+            G ← [2, 6, 1]
+            H ← [0, 1, 2]
+
+            ARR_*[A, B, C, D, E, F, G, H]
+
+            REQ ← [x, y, z]
+            PRO ← [0, 0, 0]
+
+            TOTAL ← 0
+
+            for i ← 1..|sol|
+                  TOTAL += sol[i]
+
+
+            for j ← 1..(max ← x, y, z) // O(n) * O(8)
+                  for i ← 1..8
+                        if (PRO[1] ≤ PRO[1] += ARR_*[i][1]) && (PRO[2] ≤ PRO[2] += ARR_*[i][2]) && (PRO[3] ≤ PRO[3] += ARR_*[i][3])
+                              PRO[1] += ARR_*[i][1]
+                              PRO[1] += ARR_*[i][2]
+                              PRO[1] += ARR_*[i][3]
+
+
+            if (calc ← x, y, z, PRO) ≥ sol // O(n) * O(8)
+                  ↑ sol
+
+
 **Correctness**
 
 - Returning the Correct Value
 
 > The algorithm arranges a number of hardcoded values to create preference and then it keeps track of the current progress relative to the requirements such that it never adds when the total will exceed the requirements; this is checked by compare which will check all materials. After adds are done it uses add to increment the correct element in the solution array that is organized A..H for the conglomerates. Therefore all values are correct and the numbers that represent amounts of A..H are accurate and no higher than they need to be.
 
+- Returning the Correct Value polynomial
+
+> it performs all possible tests on constructing a list of purchased materials and checks it against another and then if it's smaller it returns up, giving the smallest possible number of conglomerates. it also does the same check to not get more material than it will need in a similar check against requirements as from the linear one.
+
 - Halting
 
 > The Algorithm can never fail to add some value due to waiting for the values to be equal to the requirements. but it will continue to the next material when it is complete and when they are all done A..H use will return. therefore it will halt.
 
+- Halting polynomial
+
+> since there is a fail out of the recursive call it will eventually find a minimum and return up; but not without checking all possible options first.
+
 **Complexity**
 
+- Linear
+
 > The Algorithm performs 3 checks against the requirements that will at worst increment the number of times of the requirement therefore the complexity is O(n+m+o).
+
+- Polynomial
+
+> O(n<sup>2</sup>)
 
 # **Extra Credit**
 
@@ -470,7 +529,54 @@ Calculate with no restriction on excess
 
             ↑ SOL
 
+
+
+Calculate requirements in polynomial time without caring about wasted materials
+
+- input: x, y, z integers of the respective material, current progress on those three and the solution
+- output: minimum collection of conglomerates as an array A..H
+
+> description: polynomial time version that doesn't care about wasted material by flipping the check if less than or equal to greater than or equal
+
+      def calc ← x, y, z, sol
+
+            // conglomerates
+            A ← [1, 0, 0]
+            B ← [0, 1, 0]
+            C ← [0, 0, 1]
+            D ← [3, 3, 1]
+            E ← [0, 2, 5]
+            F ← [6, 0, 2]
+            G ← [2, 6, 1]
+            H ← [0, 1, 2]
+
+            ARR_*[A, B, C, D, E, F, G, H]
+
+            REQ ← [x, y, z]
+            PRO ← [0, 0, 0]
+
+            TOTAL ← 0
+
+            for i ← 1..|sol|
+                  TOTAL += sol[i]
+
+
+            for i ← 1..8
+                  for j ← 1..(max ← x, y, z)
+                        if (PRO[1] ≥ PRO[1] += ARR_*[i][1]) && (PRO[2] ≥ PRO[2] += ARR_*[i][2]) && (PRO[3] ≥ PRO[3] += ARR_*[i][3])
+                              PRO[1] += ARR_*[i][1]
+                              PRO[1] += ARR_*[i][2]
+                              PRO[1] += ARR_*[i][3]
+
+                        if (calc ← x, y, z, PRO) ≥ sol
+                              ↑ sol
+
+
 **Correctness**
+
+- Polynomial Time
+
+> since the algorithm is virtually the same as the one that cares about excess the same correctness will work.
 
 - Returning the Correct Value
 
@@ -482,4 +588,10 @@ Calculate with no restriction on excess
 
 **Complexity**
 
+- Linear
+
 > The Algorithm performs 3 checks against the requirements that will at worst increment the number of times of the requirement therefore the complexity is O(n+m+o). however due to the lack of caring about excess the algorithm will perform no worse than the original and in some implementations and cases it may perform better.
+
+- Polynomial Time
+
+> since the algorithm is virtually the same as the one that cares about excess the same complexity will work; but it will likely perform better in some implementations/cases.
