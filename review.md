@@ -1,5 +1,7 @@
 # **Review**
 
+**From Review Day**
+
 - Graph
 
 > definition
@@ -122,3 +124,75 @@ NOTE: grey codes will not be on test but look it up
 > - a class of problems is a set of problems that have similar structure
 
 > - the class NP is the non-deterministic poly time solvable
+
+**FROM SCHEDULE**
+
+- Recursion and ADTs
+
+> - Binary search
+
+> - Binary search as tail Recursion
+
+> - quicksort
+
+> - structure of an ADT
+
+- Priority Queue and the Heap
+
+> - Tree Traversal
+
+> - The PQ ADT
+
+> - Binary Heap
+
+> - Heapsort
+
+> - Trees and Graphs: Definitions and Representation
+
+- Recurrences
+
+> - Master Theorem: Definition
+
+> - Applying the Master Theorem
+
+> - Solving a Recurrence
+
+- Tree and Graph Algorithms
+
+> - depth first spanning tree
+
+> - Prim's Algorithm
+
+> - Kruskal's Algorithm
+
+> - Dijkstra's Algorithm
+
+- Optimized Shortest path
+
+> - A* Algorithm
+
+> - All-pairs shortest path
+
+- Hashing
+
+> - Hash Functions
+
+> - Bucket Hashing
+
+> - Open Hashing
+
+> - Hash table grow / shrink
+
+> - randomness
+
+>> - RNGs and PRNGs
+
+>> - Random Distributions
+
+>> - Finding Large Psuedo-Primes
+
+- Memoization
+
+> - memoization and dynamic programming: definition
+
+> - NP completeness
