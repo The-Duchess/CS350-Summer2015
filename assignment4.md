@@ -419,8 +419,8 @@ Calculate requirements in polynomial time
                   for i ← 1..8
                         if (PRO[1] ≤ PRO[1] += ARR_*[i][1]) && (PRO[2] ≤ PRO[2] += ARR_*[i][2]) && (PRO[3] ≤ PRO[3] += ARR_*[i][3])
                               PRO[1] += ARR_*[i][1]
-                              PRO[1] += ARR_*[i][2]
-                              PRO[1] += ARR_*[i][3]
+                              PRO[2] += ARR_*[i][2]
+                              PRO[3] += ARR_*[i][3]
 
 
             if (calc ← x, y, z, PRO) ≥ sol // O(n) * O(8)
@@ -565,8 +565,8 @@ Calculate requirements in polynomial time without caring about wasted materials
                   for j ← 1..(max ← x, y, z)
                         if (PRO[1] ≥ PRO[1] += ARR_*[i][1]) && (PRO[2] ≥ PRO[2] += ARR_*[i][2]) && (PRO[3] ≥ PRO[3] += ARR_*[i][3])
                               PRO[1] += ARR_*[i][1]
-                              PRO[1] += ARR_*[i][2]
-                              PRO[1] += ARR_*[i][3]
+                              PRO[2] += ARR_*[i][2]
+                              PRO[3] += ARR_*[i][3]
 
                         if (calc ← x, y, z, PRO) ≥ sol
                               ↑ sol
