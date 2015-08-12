@@ -417,7 +417,7 @@ Calculate requirements in polynomial time
 
             for j ← 1..(max ← x, y, z) // O(n) * O(8)
                   for i ← 1..8
-                        if (PRO[1] ≤ PRO[1] += ARR_*[i][1]) && (PRO[2] ≤ PRO[2] += ARR_*[i][2]) && (PRO[3] ≤ PRO[3] += ARR_*[i][3])
+                        if (REQ[1] ≥ PRO[1] += ARR_*[i][1]) && (REQ[2] ≥ PRO[2] += ARR_*[i][2]) && (REQ[3] ≥ PRO[3] += ARR_*[i][3])
                               PRO[1] += ARR_*[i][1]
                               PRO[2] += ARR_*[i][2]
                               PRO[3] += ARR_*[i][3]
@@ -533,10 +533,10 @@ Calculate with no restriction on excess
 
 Calculate requirements in polynomial time without caring about wasted materials
 
-- input: x, y, z integers of the respective material, current progress on those three and the solution
+- input: x, y, z integers of the respective material, and the last solution
 - output: minimum collection of conglomerates as an array A..H
 
-> description: polynomial time version that doesn't care about wasted material by flipping the check if less than or equal to greater than or equal
+> description: polynomial time version that doesn't care about wasted material by flipping the check if greater than or equal to less than or equal
 
       def calc ← x, y, z, sol
 
@@ -563,7 +563,7 @@ Calculate requirements in polynomial time without caring about wasted materials
 
             for i ← 1..8
                   for j ← 1..(max ← x, y, z)
-                        if (PRO[1] ≥ PRO[1] += ARR_*[i][1]) && (PRO[2] ≥ PRO[2] += ARR_*[i][2]) && (PRO[3] ≥ PRO[3] += ARR_*[i][3])
+                        if (REQ[1] ≤ PRO[1] += ARR_*[i][1]) && (REQ[2] ≤ PRO[2] += ARR_*[i][2]) && (REQ[3] ≤ PRO[3] += ARR_*[i][3])
                               PRO[1] += ARR_*[i][1]
                               PRO[2] += ARR_*[i][2]
                               PRO[3] += ARR_*[i][3]
