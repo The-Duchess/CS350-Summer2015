@@ -13,6 +13,38 @@
 
 > search algorithms
 
+      def search ← G, s
+
+            R ← G.root
+
+            if R = s
+                  ↑ R
+
+            done ← []
+            todo ← []
+
+            foreach ← v in G.vertices that are neighbors to R
+                  prepend → v, todo // add v to todo
+
+            while !empty ← todo
+                  foreach ← i in todo
+                        if include ← done, i
+                              remove i from todo
+                              next
+
+                        if i = s
+                              ↑ i
+
+                        if !include ← done, i
+                              prepend → i, done // add i to done
+                              remove i from todo
+                              prepend → neighbors of i, todo
+
+            ↑ null
+
+
+
+
 > - keep track of who you have vistited (done list)
 > - label vertices/edges
 
