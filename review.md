@@ -332,8 +332,8 @@ NOTE: grey codes will not be on test but look it up
             S ← stack
             push → v, S // push v onto S
             while !empty ← S
-                  v = pop ← S
-                  if v is not labeled as discovered:
+                  v ← pop ← S
+                  if v is not labeled as discovered
                         label v as discovered
                         for all edges from v to w in G.adjacentEdges ← v
                               push → w, S // push w onto S
