@@ -413,15 +413,19 @@ NOTE: grey codes will not be on test but look it up
 
 > - Hash Functions
 
-> - Bucket Hashing
+> - Bucket Hashing, chain hashing
 
 > - Open Hashing
 
 > - Hash table grow / shrink
 
+>> easy to grow (but it is slower and not technically constant time) and shrink with bucket, hard with probing (pulling the hash up is not doable so you have to leave empty markers)
+
 - randomness
 
->> - RNGs and PRNGs
+>> - [RNGs](https://en.wikipedia.org/wiki/Random_number_generation) and [PRNGs](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+
+>> Random Number Generation and Psuedo Random Number Generation
 
 >> - Random Distributions
 
@@ -442,3 +446,9 @@ NOTE: grey codes will not be on test but look it up
 NOTE: If P ≠ NP, then NP-hard problems cannot be solved in polynomial time;
 
 NOTE: If an optimization problem H has an NP-complete decision version L, then H is NP-hard.
+
+- Other Definitions
+
+> - Transient Closure: the transient closure of a binary relation R on a set X is the transitive relation R<sup>+</sup> on set X such that R and R<sup>+</sup> is minimal.
+
+> - Transitive Relation: a binary relation R over a set X is transitive if whenever an element a is related to b and b is related to c then a is related to c.
