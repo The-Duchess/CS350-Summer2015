@@ -204,13 +204,13 @@ NOTE: grey codes will not be on test but look it up
       // sorts a list a
       def quick_sort ← a, low, high
             if low < high
-                  p = partition ← a, low, high
+                  p ← partition ← a, low, high
                   quick_sort ← a, low, (p - 1)
                   quick_sort ← a. (p + 1), high
 
       partition ← a, low, high
             pivot ← a[high]
-            i = low - 1
+            i ← low - 1
             for j ← low..(high - 1)
                   if a[j] ≤ pivot
                         i ← i + 1
