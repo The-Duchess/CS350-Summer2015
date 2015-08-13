@@ -94,10 +94,13 @@
 
 > example
 
+    m ← new hash table
     def fib(n)
       if n = 1 then 1 // hold onto previous values
       if n = 2 then 1
-      else fib(n - 1) + fib(n - 2)
+      if n is a key in m then m[n]
+      m[n] ← fib(n - 1) + fib(n - 2)
+      m[n]
     end
 
     // you can also work from the bottom up
