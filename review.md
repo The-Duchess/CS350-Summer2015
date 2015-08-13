@@ -322,7 +322,7 @@ NOTE: grey codes will not be on test but look it up
 > - Kruskal's Algorithm
 
       def kruskal ← G
-            A = []
+            A ← {}
 
             foreach ← v ∈ G.vertices
                   MAKE-SET ← v
