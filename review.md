@@ -435,7 +435,7 @@ NOTE: grey codes will not be on test but look it up
 
 > - memoization and dynamic programming: definition
 
-> - NP completeness
+- NP completeness
 
 >> a problem is NP complete when it is both NP and NP-hard
 
