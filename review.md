@@ -54,7 +54,7 @@
 
 >> - if it's an admissible heuristic (optimistic) then provably it cannot perform worse
 
-> A*
+> - A*
 
 > - heuristic improvement over dijkstra's
 
