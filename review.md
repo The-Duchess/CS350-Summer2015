@@ -106,6 +106,26 @@
     // you can also work from the bottom up
     // this allows you to do linear time fib(n) which would normally be O(n)
 
+    // the concept is to create a cache of previous fib(n) vals
+
+    cache ← [1..n]
+
+    for i ← 1..n
+          cache[i] ← :notcalculated
+
+    def fib ← n
+
+          if n = 0
+                ↑ 0
+          if n = 1
+                ↑ 1
+
+          if cache[n] != :notcalculated
+                ↑ cache[n]
+          else
+                cache[n] ← (fib ← (n - 1) + fib ← (n - 2))
+                ↑ cache
+
 - NP completeness
 
 - Hash Function
