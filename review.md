@@ -166,7 +166,7 @@ NOTE: grey codes will not be on test but look it up
             temp ← R
 
             if (!temp.right and !temp.left) or temp = s
-                  if temp = s then ↑ s else ↑ null
+                  if temp = s then ↑ temp else ↑ null
 
             if temp.right ⊑ s
                   bin_find temp.right, s
