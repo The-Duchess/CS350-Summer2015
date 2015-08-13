@@ -352,7 +352,7 @@ NOTE: grey codes will not be on test but look it up
 
             foreach ← u, v ordered by weight ← u, v, increasing
                   if FIND-SET ← u ≠ FIND-SET ← v
-                        A = A ∪ {(u, v)}
+                        A ← A ∪ {(u, v)}
                         UNION ← u, v
 
             ↑ A
