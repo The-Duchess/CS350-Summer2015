@@ -43,9 +43,7 @@
             ↑ null
 
 
-
-
-> - keep track of who you have vistited (done list)
+> - keep track of who you have visited (done list)
 > - label vertices/edges
 
 > dijkstra's algorithm
