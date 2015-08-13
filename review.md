@@ -66,7 +66,7 @@
 
 > prim's algorithm
 
-> - start wit ha vertex, pull all neighbors out, and then check weight and if they reconnect things that are already connected then repeat until all vertices are checked
+> - start with a vertex, pull all neighbors out, and then check weight and if they reconnect things that are already connected then repeat until all vertices are checked
 
 > - running time O(elog(e))
 
