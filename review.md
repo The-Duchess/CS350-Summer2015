@@ -322,7 +322,7 @@ NOTE: grey codes will not be on test but look it up
 > - Kruskal's Algorithm
 
       def kruskal ← G
-            A = null
+            A = []
 
             foreach ← v ∈ G.vertices
                   MAKE-SET ← v
@@ -333,6 +333,22 @@ NOTE: grey codes will not be on test but look it up
                         UNION ← u, v
 
             ↑ A
+
+
+      def kruskal ← V, E, w
+            A ← {}
+
+            foreach ← vertex v ∈ V
+                  MAKE-SET ← v
+
+            sort ← E { |e| e[:w] }, non-decreasing // sort E by weight in non-decreasing order
+
+            foreach ← u, v in E
+                  if FIND-SET ← u = FIND-SET ← v
+                        A ← A ∪ {(u, v)}
+                        UNION ← u, v
+
+           ↑ A 
 
 > - Dijkstra's Algorithm
 
