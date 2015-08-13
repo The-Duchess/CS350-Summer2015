@@ -348,7 +348,25 @@ NOTE: grey codes will not be on test but look it up
                         A ← A ∪ {(u, v)}
                         UNION ← u, v
 
-           ↑ A 
+           ↑ A
+
+      //kruskals implemented with priority queue
+      def kruskalpq ← G
+
+            foreach ← vertex v in V[G]
+                  define set S(v) ← {v}
+
+            initialize priority queue Q that contains all edges of G, using weight as keys
+
+            A ← {}
+
+            while |A| < n - 1
+                  let set S(v) contains v and S(u) contains u
+                  if S(v) != S(u)
+                        add → (u, v), A // add edge (u, v) to A
+                        merge S(v) and S(u)
+
+            ↑ A
 
 > - Dijkstra's Algorithm
 
